@@ -18,13 +18,26 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
-      <widget class="QWidget" name="mainPage"/>
+      <widget class="QWidget" name="mainPage">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="MainWidget" name="mainWidget" native="true"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="setupPage">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="SetupWidget" name="widget" native="true"/>
+         <widget class="SetupWidget" name="setupWidget" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="FoodWidget" name="foodWidget" native="true"/>
         </item>
        </layout>
       </widget>
@@ -39,6 +52,18 @@
    <class>SetupWidget</class>
    <extends>QWidget</extends>
    <header>setupwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MainWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FoodWidget</class>
+   <extends>QWidget</extends>
+   <header>foodwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

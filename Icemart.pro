@@ -16,14 +16,26 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     setupwidget.cpp \
     mainwidget.cpp \
-    sugestionwidget.cpp
+    sugestionwidget.cpp \
+    recipewidget.cpp \
+    dietwidget.cpp \
+    foodwidget.cpp
 
 HEADERS  += mainwindow.h \
     setupwidget.h \
     mainwidget.h \
-    sugestionwidget.h
+    sugestionwidget.h \
+    recipewidget.h \
+    dietwidget.h \
+    foodwidget.h
 
 FORMS    += mainwindow.ui \
     setupwidget.ui \
     mainwidget.ui \
-    sugestionwidget.ui
+    sugestionwidget.ui \
+    recipewidget.ui \
+    dietwidget.ui \
+    foodwidget.ui
+
+RESOURCES += \
+    res.qrc

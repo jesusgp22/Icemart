@@ -1,0 +1,7 @@
+0,Manzana,0,unidades
+1,Pera,0,unidades
+2,Papa,0,unidades
+3,Pollo,0,gramos
+4,Carne,0,gramos
+5,Pezcado,0,gramos
+6,Leche,0,litros
