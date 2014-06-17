@@ -8,5 +8,6 @@
         <file>res/listicon.png</file>
         <file>res/background.jpg</file>
         <file>res/fridgeicon.png</file>
+        <file>res/icemarticon.png</file>
     </qresource>
 </RCC>

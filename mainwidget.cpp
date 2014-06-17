@@ -32,3 +32,28 @@ void MainWidget::updateTimer()
     ui->timeLabel->setText(time);
     ui->dateLabel->setText(date);
 }
+
+void MainWidget::on_profileButton_clicked()
+{
+
+}
+
+void MainWidget::on_foodButton_clicked()
+{
+
+}
+
+void MainWidget::on_recipeButton_clicked()
+{
+
+}
+
+void MainWidget::on_dietButton_clicked()
+{
+
+}
+
+void MainWidget::on_listButton_clicked()
+{
+
+}

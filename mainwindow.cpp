@@ -4,7 +4,7 @@
 #include <QSettings>
 #include <QDebug>
 
-#define DEBUG true
+#define DEBUG false
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if(!DEBUG){
         if(!settings.contains("initialized")){
             qDebug()<<"Run app setup for the first time";
-             //open the setup wizzard
+            ui->stackedWidget->setCurrentWidget(ui->setupPage);
         }
     }
     this->setStyleSheet("#MainWindow {background-image: url(:/res/background.jpg)}");

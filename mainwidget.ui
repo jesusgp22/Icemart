@@ -98,14 +98,14 @@
           </layout>
          </item>
          <item>
-          <spacer name="verticalSpacer_2">
+          <spacer name="verticalSpacer">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
-             <height>165</height>
+             <height>40</height>
             </size>
            </property>
           </spacer>
@@ -239,7 +239,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QToolButton" name="dietButton_2">
+         <widget class="QToolButton" name="listButton">
           <property name="enabled">
            <bool>true</bool>
           </property>

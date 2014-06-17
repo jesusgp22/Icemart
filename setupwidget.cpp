@@ -153,7 +153,6 @@ void SetupWidget::on_nextPage1Button_clicked()
 
 void SetupWidget::on_fitnessStateField_currentIndexChanged(int index)
 {
-
 }
 
 void SetupWidget::on_objectiveField_currentIndexChanged(int index)
@@ -175,7 +174,46 @@ void SetupWidget::on_objectiveField_currentIndexChanged(int index)
 
 void SetupWidget::on_dietField_currentIndexChanged(int index)
 {
+    switch (index) {
+    case 0: //base diet
+        ui->fatsField->setText("20");
+        ui->carbsField->setText("55");
+        ui->proteinsField->setText("25");
+        break;
+    case 1: //high carb
+        ui->fatsField->setText("20");
+        ui->carbsField->setText("60");
+        ui->proteinsField->setText("20");
+        break;
+    case 2: //high prot
+        ui->fatsField->setText("35");
+        ui->carbsField->setText("25");
+        ui->proteinsField->setText("40");
+        break;
+    case 3: //zone
+        ui->fatsField->setText("30");
+        ui->carbsField->setText("40");
+        ui->proteinsField->setText("30");
+        break;
+    default:
+        break;
+    }
+    if(index==4){
+        ui->fatsField->setEnabled(true);
+        ui->carbsField->setEnabled(true);
+        ui->proteinsField->setEnabled(true);
+    }else{
+        ui->fatsField->setEnabled(false);
+        ui->carbsField->setEnabled(false);
+        ui->proteinsField->setEnabled(false);
+    }
+}
 
+bool checkPercentages(int a,int b,int c){
+    if((a+b+c)!=100){
+        return false;
+    }
+    return true;
 }
 
 void SetupWidget::on_endButton_clicked()
@@ -185,15 +223,45 @@ void SetupWidget::on_endButton_clicked()
 
 void SetupWidget::on_fatsField_editingFinished()
 {
-
+    bool good;
+    int a = ui->fatsField->text().toInt(&good);
+    int b = ui->carbsField->text().toInt();
+    int c = ui->proteinsField->text().toInt();
+    if(good){
+        if(!checkPercentages(a,b,c)){
+            qDebug()<<"error percentages don't add up to 100";
+        }
+    }else{
+        qDebug()<<"error: enter an integer";
+    }
 }
 
 void SetupWidget::on_proteinsField_editingFinished()
 {
-
+    bool good;
+    int a = ui->fatsField->text().toInt();
+    int b = ui->carbsField->text().toInt();
+    int c = ui->proteinsField->text().toInt(&good);
+    if(good){
+        if(!checkPercentages(a,b,c)){
+            qDebug()<<"error percentages don't add up to 100";
+        }
+    }else{
+        qDebug()<<"error: enter an integer";
+    }
 }
 
 void SetupWidget::on_carbsField_editingFinished()
 {
-
+    bool good;
+    int a = ui->fatsField->text().toInt();
+    int b = ui->carbsField->text().toInt(&good);
+    int c = ui->proteinsField->text().toInt();
+    if(good){
+        if(!checkPercentages(a,b,c)){
+            qDebug()<<"error percentages don't add up to 100";
+        }
+    }else{
+        qDebug()<<"error: enter an integer";
+    }
 }

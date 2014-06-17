@@ -34,13 +34,17 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page">
+      <widget class="QWidget" name="listPage"/>
+      <widget class="QWidget" name="foodPage">
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="FoodWidget" name="foodWidget" native="true"/>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="sugestionsPage"/>
+      <widget class="QWidget" name="recipesPage"/>
+      <widget class="QWidget" name="dietPage"/>
      </widget>
     </item>
    </layout>
