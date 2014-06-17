@@ -2,6 +2,7 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
+#include <QTimer>
 
 namespace Ui {
 class MainWidget;
@@ -17,9 +18,11 @@ public:
 
 private slots:
     void on_sugestionButton_clicked();
+    void updateTimer();
 
 private:
     Ui::MainWidget *ui;
+    QTimer* timer;
 };
 
 #endif // MAINWIDGET_H

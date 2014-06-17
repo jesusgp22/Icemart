@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>res/food.txt</file>
+        <file>res/dietplanicon.png</file>
+        <file>res/mealicon.png</file>
+        <file>res/profileicon.png</file>
+        <file>res/recipesicon.png</file>
+        <file>res/listicon.png</file>
+        <file>res/background.jpg</file>
+        <file>res/fridgeicon.png</file>
     </qresource>
 </RCC>

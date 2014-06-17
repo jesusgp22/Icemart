@@ -16,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
         if(!settings.contains("initialized")){
             qDebug()<<"Run app setup for the first time";
              //open the setup wizzard
-            ui->stackedWidget->setCurrentWidget(ui->setupPage);
         }
     }
+    this->setStyleSheet("#MainWindow {background-image: url(:/res/background.jpg)}");
     //this->showFullScreen();
 }
 
