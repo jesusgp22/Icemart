@@ -4,7 +4,7 @@
 #include <QSettings>
 #include <QDebug>
 
-#define DEBUG true
+#define DEBUG false
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->sugestionWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     connect(ui->mainWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
+    connect(ui->setupWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     QSettings settings;
     if(!DEBUG){
         if(!settings.contains("initialized")){

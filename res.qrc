@@ -9,5 +9,7 @@
         <file>res/background.jpg</file>
         <file>res/fridgeicon.png</file>
         <file>res/icemarticon.png</file>
+        <file>res/homeicon.png</file>
+        <file>res/searchicon.png</file>
     </qresource>
 </RCC>
