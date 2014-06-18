@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::SugestionWidget *ui;
+
+signals:
+    void setPage(int);
 };
 
 #endif // SUGESTIONWIDGET_H

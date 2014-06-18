@@ -4,13 +4,15 @@
 #include <QSettings>
 #include <QDebug>
 
-#define DEBUG false
+#define DEBUG true
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->sugestionWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
+    connect(ui->mainWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     QSettings settings;
     if(!DEBUG){
         if(!settings.contains("initialized")){
@@ -24,5 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
+}
+
+void MainWindow::setPageByIndex(int index){
+    ui->stackedWidget->setCurrentIndex(index);
 }

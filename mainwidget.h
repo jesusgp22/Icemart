@@ -33,6 +33,9 @@ private slots:
 private:
     Ui::MainWidget *ui;
     QTimer* timer;
+
+signals:
+    void setPage(int);
 };
 
 #endif // MAINWIDGET_H

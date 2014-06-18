@@ -147,12 +147,26 @@ void SetupWidget::on_nextPage1Button_clicked()
         settings.setValue("IDFC",IDFC);
         qDebug()<<"IDFC is "<<IDFC;
 
+        on_dietField_currentIndexChanged(0);
+
         this->setCurrentWidget(ui->AdvancedPage);
     }
 }
 
 void SetupWidget::on_fitnessStateField_currentIndexChanged(int index)
 {
+    QSettings settings;
+    if(index==0){ //morbid obesity
+        settings.setValue("state","morbid_obesity");
+    }else if (index==1){ //obesity
+        settings.setValue("state","obesity");
+    }else if(index==2){ //overweight
+        settings.setValue("state","overweight");
+    }else if(index==3){ //healthy
+        settings.setValue("state","healthy");
+    }else if(index==4){ //underweight
+        settings.setValue("state","underweight");
+    }
 }
 
 void SetupWidget::on_objectiveField_currentIndexChanged(int index)
@@ -218,6 +232,19 @@ bool checkPercentages(int a,int b,int c){
 
 void SetupWidget::on_endButton_clicked()
 {
+    //validate output.
+    QSettings settings;
+    if(ui->objectiveField->currentIndex()==0){
+        settings.setValue("objective","lose");
+    }else if(ui->objectiveField->currentIndex()==1){
+        settings.setValue("objective","maintenance");
+    }else if(ui->objectiveField->currentIndex()==2){
+        settings.setValue("objective","win");
+    }
+    settings.setValue("diet",ui->dietField->currentText());
+    settings.setValue("carbs",ui->carbsField->text());
+    settings.setValue("prots",ui->proteinsField->text());
+    settings.setValue("fats",ui->fatsField->text());
 
 }
 
