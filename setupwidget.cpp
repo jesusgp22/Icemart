@@ -245,6 +245,9 @@ void SetupWidget::on_endButton_clicked()
     settings.setValue("carbs",ui->carbsField->text());
     settings.setValue("prots",ui->proteinsField->text());
     settings.setValue("fats",ui->fatsField->text());
+    settings.setValue("initialized",true);
+
+    emit setPage(0);
 
 }
 

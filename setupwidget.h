@@ -37,6 +37,9 @@ private slots:
 private:
     Ui::SetupWidget *ui;
     bool validate();
+
+signals:
+    void setPage(int index);
 };
 
 #endif // SETUPWIDGET_H

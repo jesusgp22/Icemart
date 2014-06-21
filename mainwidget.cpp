@@ -3,6 +3,7 @@
 
 #include <QTime>
 #include <QDebug>
+#include <QSettings>
 MainWidget::MainWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget)
