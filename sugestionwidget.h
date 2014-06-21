@@ -20,6 +20,15 @@ private:
 
 signals:
     void setPage(int);
+private slots:
+    void on_pushButton_4_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_7_clicked();
+    void on_checkBox_clicked();
+    void on_checkBox_2_clicked();
+    void on_checkBox_3_clicked();
+    void on_checkBox_4_clicked();
+    void on_checkBox_5_clicked();
 };
 
 #endif // SUGESTIONWIDGET_H

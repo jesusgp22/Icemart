@@ -10,7 +10,20 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Icemart
 TEMPLATE = app
-
+QMAKE_CXXFLAGS += -std=c++0x
+INCLUDEPATH += . \
+    /opt/aleph/include
+LIBS += -L/opt/aleph/lib \
+    -lAleph \
+    -lnana \
+    -lc \
+    -lm \
+    -lgsl \
+    -lgslcblas \
+    -lgmp \
+    -lmpfr \
+    -lasprintf \
+    -lpthread
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -27,7 +40,8 @@ HEADERS  += mainwindow.h \
     sugestionwidget.h \
     recipewidget.h \
     dietwidget.h \
-    foodwidget.h
+    foodwidget.h \
+    Grafo.h
 
 FORMS    += mainwindow.ui \
     setupwidget.ui \
