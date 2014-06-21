@@ -34,7 +34,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="recipesPage"/>
+      <widget class="QWidget" name="recipesPage">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="RecipeWidget" name="recipeWidget" native="true"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="dietPage"/>
       <widget class="QWidget" name="sugestionsPage">
        <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -79,7 +85,13 @@
   <customwidget>
    <class>SugestionWidget</class>
    <extends>QWidget</extends>
-   <header location="global">sugestionwidget.h</header>
+   <header>sugestionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RecipeWidget</class>
+   <extends>QWidget</extends>
+   <header>recipewidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

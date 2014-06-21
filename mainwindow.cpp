@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->sugestionWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     connect(ui->mainWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     connect(ui->setupWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
+    connect(ui->foodWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
+    connect(ui->recipeWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     QSettings settings;
     if(!DEBUG){
         if(!settings.contains("initialized")){

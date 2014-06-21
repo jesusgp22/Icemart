@@ -20,8 +20,15 @@ private slots:
 
     void on_removeButton_clicked();
 
+    void on_homeButton_clicked();
+
+    void on_searchButton_clicked();
+
 private:
     Ui::FoodWidget *ui;
+
+signals:
+    void setPage(int index);
 };
 
 #endif // FOODWIDGET_H

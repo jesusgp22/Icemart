@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,7 +29,8 @@ HEADERS  += mainwindow.h \
     sugestionwidget.h \
     recipewidget.h \
     dietwidget.h \
-    foodwidget.h
+    foodwidget.h \
+    dbConnection.h
 
 FORMS    += mainwindow.ui \
     setupwidget.ui \

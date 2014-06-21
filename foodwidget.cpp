@@ -9,7 +9,7 @@ FoodWidget::FoodWidget(QWidget *parent) :
     ui(new Ui::FoodWidget)
 {
     ui->setupUi(this);
-    QFile file(":res/food.txt");
+    QFile file(":sql/food.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         qDebug()<<"No se pudo abrir el archivo de alimentos";
     }
@@ -52,4 +52,14 @@ void FoodWidget::on_removeButton_clicked()
         QListWidgetItem *item = ui->listWidget->item(row);
         item->setText(tokens.at(0)+" "+QString::number(a)+" "+tokens.at(2));
     }
+}
+
+void FoodWidget::on_homeButton_clicked()
+{
+    emit setPage(0);
+}
+
+void FoodWidget::on_searchButton_clicked()
+{
+
 }

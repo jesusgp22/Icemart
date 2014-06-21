@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/food.txt</file>
         <file>res/dietplanicon.png</file>
         <file>res/mealicon.png</file>
         <file>res/profileicon.png</file>
@@ -11,5 +10,11 @@
         <file>res/icemarticon.png</file>
         <file>res/homeicon.png</file>
         <file>res/searchicon.png</file>
+        <file>res/addicon.png</file>
+        <file>res/minusicon.ico</file>
+        <file>sql/schema.sql</file>
+        <file>res/backicon.png</file>
+        <file>sql/food.txt</file>
+        <file>sql/recipes.txt</file>
     </qresource>
 </RCC>
