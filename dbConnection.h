@@ -127,7 +127,7 @@ static bool createConnection()
     QString dbName = dir.filePath("Aplication.sqlite");
 
     //comment next line
-    QFile::remove(dbName);
+    //QFile::remove(dbName);
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbName);
 
@@ -140,7 +140,7 @@ static bool createConnection()
 
 
     QSettings settings;
-    settings.remove("dbInitialized"); //uncomment to refill database on each run!
+    //settings.remove("dbInitialized"); //uncomment to refill database on each run!
     if(!settings.contains("dbInitialized"))
     {
         createDatabase();
