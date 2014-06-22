@@ -161,7 +161,36 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton">
+          <widget class="QToolButton" name="allIcon">
+           <property name="minimumSize">
+            <size>
+             <width>208</width>
+             <height>59</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Ver Todos</string>
+           </property>
+           <property name="icon">
+            <iconset resource="res.qrc">
+             <normaloff>:/res/allicon.png</normaloff>:/res/allicon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>64</width>
+             <height>64</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+           <property name="autoRaise">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="soupButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -190,7 +219,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_2">
+          <widget class="QToolButton" name="breakfastButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -219,7 +248,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_3">
+          <widget class="QToolButton" name="fishButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -248,7 +277,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_4">
+          <widget class="QToolButton" name="meatButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -277,7 +306,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_5">
+          <widget class="QToolButton" name="chickenButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -306,7 +335,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_6">
+          <widget class="QToolButton" name="saladButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -335,7 +364,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </widget>
          </item>
          <item>
-          <widget class="QToolButton" name="toolButton_7">
+          <widget class="QToolButton" name="riceButton">
            <property name="minimumSize">
             <size>
              <width>208</width>
@@ -406,6 +435,16 @@ background-color: rgba(255, 255, 255, 130);}</string>
           </layout>
          </item>
          <item>
+          <widget class="QLabel" name="typeLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 75 13pt &quot;MV Boli&quot;;</string>
+           </property>
+           <property name="text">
+            <string>$Type</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <widget class="QLabel" name="label">
@@ -450,7 +489,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
          <item>
           <widget class="QLabel" name="label_2">
            <property name="styleSheet">
-            <string notr="true">font: 75 12pt &quot;MV Boli&quot;;</string>
+            <string notr="true">font: 75 15pt &quot;MV Boli&quot;;</string>
            </property>
            <property name="text">
             <string>Ingredientes</string>

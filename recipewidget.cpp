@@ -3,22 +3,15 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QSqlError>
+#include <QMessageBox>
 
 RecipeWidget::RecipeWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RecipeWidget)
 {
     ui->setupUi(this);
-    //fill up the recipe screen with a few (random?) recipes
-    //sort by those that can be cooked? sort by most liked
-    QSqlQuery query;
-    query.exec("SELECT id,name,recipe_type FROM Recipe");
-    int i=0;
-    while(query.next()){
-        QListWidgetItem* item = new QListWidgetItem(query.value(1).toString());
-        item->setData(Qt::UserRole,query.value(0).toInt());
-        ui->listWidget->insertItem(i++,item);
-    }
+    //show all recipes
+    fillRecipeList();
 }
 
 RecipeWidget::~RecipeWidget()
@@ -40,12 +33,12 @@ void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
         ui->stackedWidget->setCurrentIndex(1);
         ui->backButton->setEnabled(true);
         ui->nameLabel->setText(query.value(1).toString()); //name
+        ui->typeLabel->setText(query.value(2).toString()); //type
         ui->preparationText->setText(query.value(3).toString());
         QSqlQuery subquery;
         QString subquerytext = "SELECT Ingredient.amount, Ingredient.verbose_name "
                          "FROM Ingredient JOIN Recipe WHERE Ingredient.recipe_id=Recipe.id "
                          "AND Recipe.id="+QString::number(id)+";";
-        qDebug()<<subquerytext;
         if(subquery.exec(subquerytext)){
             ui->ingredientText->clear();
             while(subquery.next()){
@@ -66,4 +59,106 @@ void RecipeWidget::on_backButton_clicked()
 {
     ui->backButton->setEnabled(false);
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void RecipeWidget::fillRecipeList(QString filter){
+    QSqlQuery query;
+    if(filter==""){
+        query.exec("SELECT id,name FROM Recipe;");
+    }else{
+        query.exec("SELECT id,name FROM Recipe WHERE recipe_type=\""+filter+"\";");
+    }
+    int i=0;
+    ui->listWidget->clear();
+    while(query.next()){
+        QListWidgetItem* item = new QListWidgetItem(query.value(1).toString());
+        item->setData(Qt::UserRole,query.value(0).toInt());
+        ui->listWidget->insertItem(i++,item);
+    }
+}
+
+void RecipeWidget::on_soupButton_clicked()
+{
+    fillRecipeList("Sopas y cremas");
+}
+
+void RecipeWidget::on_allIcon_clicked()
+{
+    fillRecipeList();
+}
+
+void RecipeWidget::on_breakfastButton_clicked()
+{
+    fillRecipeList("Entradas y huevos");
+}
+
+void RecipeWidget::on_fishButton_clicked()
+{
+    fillRecipeList("Pescados y mariscos");
+}
+
+void RecipeWidget::on_meatButton_clicked()
+{
+    fillRecipeList("Carnes");
+}
+
+void RecipeWidget::on_chickenButton_clicked()
+{
+    fillRecipeList("Aves y caza");
+}
+
+void RecipeWidget::on_saladButton_clicked()
+{
+    fillRecipeList("Ensaladas y verduras");
+}
+
+void RecipeWidget::on_riceButton_clicked()
+{
+    fillRecipeList("Pastas y arroces");
+}
+
+void RecipeWidget::on_searchButton_clicked()
+{
+    //tokenize and flattern search query
+    QString userQuery(this->ui->searchLine->text());
+    if(userQuery.isEmpty()){
+        return;
+    }
+    QStringList rawTokens = userQuery.split(" ");
+    QStringList tokens;
+    for(int j=0;j<rawTokens.size();j++){
+        tokens << rawTokens.at(j).toLower();
+    }
+
+    //get all recipes
+    QSqlQuery query;
+    if(!query.exec("SELECT id,name FROM Recipe")){
+        qDebug()<<"Failed to retrieve recipes";
+        return;
+    }
+    int j=0;
+    bool found=false;
+    ui->listWidget->clear();
+    while(query.next()){
+        QString name = query.value(1).toString();
+        name = name.toLower();
+        qDebug()<<name;
+        for(int i=0;i<tokens.size();i++){
+            if(name.contains(tokens.at(i)))
+                found=true;
+        }
+        if(found){
+            found=false;
+            QListWidgetItem* item = new QListWidgetItem(query.value(1).toString());
+            item->setData(Qt::UserRole,query.value(0).toInt());
+            ui->listWidget->insertItem(j++,item);
+        }
+    }
+    if(j==0){
+        QMessageBox message(this);
+        message.setWindowTitle("No se encontraron recetas");
+        message.setText("No se encontraron recetas que coincidan con su busqueda, intenta usar palabras mas generales y revisar la ortografia de las palabras");
+        message.setStandardButtons(QMessageBox::Ok);
+        message.exec();
+    }
 }
