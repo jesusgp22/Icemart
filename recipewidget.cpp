@@ -2,6 +2,7 @@
 #include "ui_recipewidget.h"
 #include <QSqlQuery>
 #include <QDebug>
+#include <QSqlError>
 
 RecipeWidget::RecipeWidget(QWidget *parent) :
     QWidget(parent),
@@ -41,15 +42,19 @@ void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
         ui->nameLabel->setText(query.value(1).toString()); //name
         ui->preparationText->setText(query.value(3).toString());
         QSqlQuery subquery;
-        if(subquery.exec("SELECT Recipe.verbose_name, Recipe.amount "
-                         "FROM Ingredients JOIN Recipe WHERE Ingredientes.recipe_id=Recipe.id"
-                         "AND Recipe.id="+QString::number(id)+";")){
+        QString subquerytext = "SELECT Ingredient.amount, Ingredient.verbose_name "
+                         "FROM Ingredient JOIN Recipe WHERE Ingredient.recipe_id=Recipe.id "
+                         "AND Recipe.id="+QString::number(id)+";";
+        qDebug()<<subquerytext;
+        if(subquery.exec(subquerytext)){
+            ui->ingredientText->clear();
             while(subquery.next()){
-                ui->ingredientText->insertPlainText(subquery.value(0).toString()+subquery.value(1).toString());
+                ui->ingredientText->insertPlainText(subquery.value(0).toString()+" "+subquery.value(1).toString()+"\n");
 
             }
         }else{
             qDebug()<<"Couldn't retrieve ingredientes";
+            qDebug()<<subquery.lastError().text();
         }
     }else{
         qDebug()<<"Couldn't retrieve recipe from database";

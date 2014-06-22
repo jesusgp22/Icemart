@@ -5,10 +5,10 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QApplication>
-#include <QStandardPaths>
 #include <QDir>
 #include <QDebug>
 #include <QSettings>
+#include <QStandardPaths>
 #include <QSqlError>
 
 void createTables(QString &sqlLine)
@@ -123,8 +123,11 @@ static bool createConnection()
             qDebug()<<"Error: creating directory";
         }
     }
+
     QString dbName = dir.filePath("Aplication.sqlite");
 
+    //comment next line
+    //QFile::remove(dbName);
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbName);
 

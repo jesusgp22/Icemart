@@ -1,7 +1,7 @@
 {
 Crema de calabacines
 Sopas y cremas
-Se pelan y cortan las patatas a dados, así como los calabacines. Se ponen a hervir con el agua, que los cubra apenas. Una vez cocido esto, se tritura con la batidora hasta que quede una crema fina. Agregar la leche, la nata y el queso cremoso. Mezclar bien y sazonar con sal. Se le puede agregar queso rallado o en polvo al momento de servir. Esta receta sirve también para hacer crema de zanahorias o de verduras, cambiando sólo el ingrediente principal, que aquí ha sido el calabacín.
+Se pelan y cortan las patatas a dados, asÃ­ como los calabacines. Se ponen a hervir con el agua, que los cubra apenas. Una vez cocido esto, se tritura con la batidora hasta que quede una crema fina. Agregar la leche, la nata y el queso cremoso. Mezclar bien y sazonar con sal. Se le puede agregar queso rallado o en polvo al momento de servir. Esta receta sirve tambiÃ©n para hacer crema de zanahorias o de verduras, cambiando sÃ³lo el ingrediente principal, que aquÃ­ ha sido el calabacÃ­n.
 1
 5
 26
@@ -10,14 +10,14 @@ Se pelan y cortan las patatas a dados, así como los calabacines. Se ponen a herv
 5 papas=papa
 1 litro de agua
 1 vaso de leche=leche
-1 tacita de nata líquida=nata
+1 tacita de nata lÃ­quida=nata
 200 gramos de queso cremoso=queso crema
 1 pellizco de sal
 }
 {
 Pisca andina
 Sopas y cremas
-Se coloca a hervir el agua con la cebolla, pimentón, cebollin, cilantro y ajos junto con la patatas .Al estar blanditas las patatas se le coloca la leche, el queso y el pan en trozos pequeños, se deja por 3 minutos hasta tibiar la leche, y al servir se le puede agregar cilantro picadito.  Es ideal para el desayuno solo o como primer plato.  
+Se coloca a hervir el agua con la cebolla, pimentÃ³n, cebollin, cilantro y ajos junto con la patatas .Al estar blanditas las patatas se le coloca la leche, el queso y el pan en trozos pequeÃ±os, se deja por 3 minutos hasta tibiar la leche, y al servir se le puede agregar cilantro picadito.  Es ideal para el desayuno solo o como primer plato.  
 0
 8
 22
@@ -36,7 +36,7 @@ Se coloca a hervir el agua con la cebolla, pimentón, cebollin, cilantro y ajos j
 {
 Crema de espinacas
 Sopas y cremas
-Poner agua a hervir. Mientras pelar y trocear las patatas y las cebollas y poner a cocer. Cuando ya esté cocido, agregar las espinacas y el cubito de concentrado de carne y cocer unos 5 minutos más. Una vez hervido pasarlo todo por la batidora. Añadirle la nuez moscada y el yogurt, volver a batir para mezclar bien y servir.  
+Poner agua a hervir. Mientras pelar y trocear las patatas y las cebollas y poner a cocer. Cuando ya estÃ© cocido, agregar las espinacas y el cubito de concentrado de carne y cocer unos 5 minutos mÃ¡s. Una vez hervido pasarlo todo por la batidora. AÃ±adirle la nuez moscada y el yogurt, volver a batir para mezclar bien y servir.  
 0
 4
 21
@@ -51,19 +51,19 @@ Poner agua a hervir. Mientras pelar y trocear las patatas y las cebollas y poner
 {
 Huevos a la alemana
 Entradas y huevos
-Se cuecen los huevos, se pelan y se seccionan.  Se les quita la yema, se agrega el jamón picadito, las yemas de los huevos, el aceite se sazona y se tritura haciendo una masa.  Y con está mezcla se rellenas los huevos.  Se pone en un bol la harina,  las yemas, el aceite  y poco a poco la leche fría.  Se añaden las claras batidas a punto de nieve, se deja reposar.  Por está mezcla se pasan los huevos y se fríen en aceite hasta que tomen color.  En una cazuela se echa aceite, la cebolla y los tomates pelados y cortados, los guisantes.  Se sazona, se añade el azúcar y se deja hacer la salsa.  Se sirven los huevos con la salsa por encima.
+Se cuecen los huevos, se pelan y se seccionan.  Se les quita la yema, se agrega el jamÃ³n picadito, las yemas de los huevos, el aceite se sazona y se tritura haciendo una masa.  Y con estÃ¡ mezcla se rellenas los huevos.  Se pone en un bol la harina,  las yemas, el aceite  y poco a poco la leche frÃ­a.  Se aÃ±aden las claras batidas a punto de nieve, se deja reposar.  Por estÃ¡ mezcla se pasan los huevos y se frÃ­en en aceite hasta que tomen color.  En una cazuela se echa aceite, la cebolla y los tomates pelados y cortados, los guisantes.  Se sazona, se aÃ±ade el azÃºcar y se deja hacer la salsa.  Se sirven los huevos con la salsa por encima.
 0
 35
 22
 15
 4 cucharadas de aceite=aceite
-10 gramos de azúcar=azucar
+10 gramos de azÃºcar=azucar
 1 cebolla=cebolla
 2 huevos, la clara=huevo
 400 gramos de guisantes=guisantes
 1 cucharada de harina=harina
 4 huevos=huevo
-100 gramos de jamón serrano=jamon serrano
+100 gramos de jamÃ³n serrano=jamon serrano
 1 litro de leche=leche
 1 pizca de pimienta
 3 tomates=tomate
@@ -73,54 +73,54 @@ Se cuecen los huevos, se pelan y se seccionan.  Se les quita la yema, se agrega 
 {
 Huevos revueltos a la americana
 Entradas y huevos
-En una sartén se calienta la mantequilla.  Se corta muy picado el jamón de York.  Se baten los huevos muy bien se sazona con sal y la salsa ketchup, se añaden al jamón y se pasan a la sartén, se remueven, cuando el huevo ha cuajado se retira.
+En una sartÃ©n se calienta la mantequilla.  Se corta muy picado el jamÃ³n de York.  Se baten los huevos muy bien se sazona con sal y la salsa ketchup, se aÃ±aden al jamÃ³n y se pasan a la sartÃ©n, se remueven, cuando el huevo ha cuajado se retira.
 0
 34
 10
 9
 4 huevos=huevo
-150 gramos de jamón york=jamon york
+150 gramos de jamÃ³n york=jamon york
 1 cucharada de mantequilla=mantequilla
 1 pizca de sal
 1 cucharada de salsa ketchup=salsa ketchup
 }
 {
-Sanwichs de jamón, anchoas y Roquefort
+Sanwichs de jamÃ³n, anchoas y Roquefort
 Entradas y huevos
-Sobre una rebanada de pan se coloca una loncha de jamón ibérico, sobre esta un trocito de roquefort, finalmente se adorna con una anchoa.
+Sobre una rebanada de pan se coloca una loncha de jamÃ³n ibÃ©rico, sobre esta un trocito de roquefort, finalmente se adorna con una anchoa.
 0
 24
 30
 10
 4 rebanadas de pan tostado=pan
-4 lonchas de jamón ibérico=jamon iberico
+4 lonchas de jamÃ³n ibÃ©rico=jamon iberico
 75 gramos de queso roquefort=queso roquefort
 4 anchoas=anchoas
 }
 {
 Tostadas francesas
 Entradas y huevos
-Se mezclan los cuatro primeros ingredientes y se sumergen las rodajas de pan.  Se cocina cada una en una sartén con una cucharada de mantequilla hasta que esté bien dorada y cocida por ambos lados.  Servir con miel, mermelada, sirope o azúcar.  
+Se mezclan los cuatro primeros ingredientes y se sumergen las rodajas de pan.  Se cocina cada una en una sartÃ©n con una cucharada de mantequilla hasta que estÃ© bien dorada y cocida por ambos lados.  Servir con miel, mermelada, sirope o azÃºcar.  
 0
 10
 35
 20
 1 huevo=huevo
 1 pizca de sal
-2 cucharadas de azúcar=azucar
+2 cucharadas de azÃºcar=azucar
 200 ccs de leche=leche
 4 rodajas de pan=pan
 4 cucharadas de mantquilla=mantequilla
 }
 {
-Tortilla de calabacín
+Tortilla de calabacÃ­n
 Entradas y huevos
-Trocear el pimiento y los dientes de ajos, sazonar y sofreír.  Pelar y cortar el calabacín y agregar a la sartén, sazonar, remover y sofreír todo el conjunto a fuego lento. Cascar los huevos en un bol, añadir un pellizco de sal y batir.   Agregar el sofrito, retirando gran parte del aceite y añadir los taquitos de pavo, mezclar bien y verter sobre la sartén.  Cuando empiece a cuajar el huevo, darle la vuelta con la ayuda de un plato, repetir esta operación hasta que la tortilla esté totalmente hecha.  
+Trocear el pimiento y los dientes de ajos, sazonar y sofreÃ­r.  Pelar y cortar el calabacÃ­n y agregar a la sartÃ©n, sazonar, remover y sofreÃ­r todo el conjunto a fuego lento. Cascar los huevos en un bol, aÃ±adir un pellizco de sal y batir.   Agregar el sofrito, retirando gran parte del aceite y aÃ±adir los taquitos de pavo, mezclar bien y verter sobre la sartÃ©n.  Cuando empiece a cuajar el huevo, darle la vuelta con la ayuda de un plato, repetir esta operaciÃ³n hasta que la tortilla estÃ© totalmente hecha.  
 0
 29
 23
 8
-1 calabacín=calabacin
+1 calabacÃ­n=calabacin
 1 pimiento verde=pimiento verde
 2 dientes  de  ajo =ajo
 4 huevos=huevo
@@ -129,9 +129,9 @@ Trocear el pimiento y los dientes de ajos, sazonar y sofreír.  Pelar y cortar el
 100 gramos de pavo cortado a taquitos=pavo
 }
 {
-Truchas con champiñones
+Truchas con champiÃ±ones
 Pescados y mariscos
-Se limpian las truchas y se las riega con zumo de limón y se sazonan. Se pone en una bandeja de horno la cebolla cortada y el perejil y los ajos picados con los champiñones limpios y troceados y se rocía con un chorrito de aceite, encima se ponen las truchas con trocitos de mantequilla por encima y se asan hasta que estén echas.
+Se limpian las truchas y se las riega con zumo de limÃ³n y se sazonan. Se pone en una bandeja de horno la cebolla cortada y el perejil y los ajos picados con los champiÃ±ones limpios y troceados y se rocÃ­a con un chorrito de aceite, encima se ponen las truchas con trocitos de mantequilla por encima y se asan hasta que estÃ©n echas.
 0
 45
 15
@@ -139,9 +139,9 @@ Se limpian las truchas y se las riega con zumo de limón y se sazonan. Se pone en
 1 pizca de sal
 1 cucharada de perejil picado=perejil
 20 gramos de mantequilla=mantequilla
-1 limón=limon
+1 limÃ³n=limon
 2 truchas=truchas
-400 gramos de champiñónes=champiñones
+400 gramos de champiÃ±Ã³nes=champiÃ±ones
 2 dientes de ajo=ajo
 1 cebolla=cebolla
 4 cucharadas de aceite=aceite
@@ -150,23 +150,23 @@ Se limpian las truchas y se las riega con zumo de limón y se sazonan. Se pone en
 {
 Filetes Strogonoff
 Carnes
-Se corta en láminas finas la cebolla y el champiñón. En una sartén se pone la mitad de la mantequilla y se rehoga la cebolla hasta que este tierna se incorpora entonces los champiñones se sigue rehogando unos minutos mas y se apartan en una fuente manteniéndolo caliente. Se incorpora a la sartén el resto de la mantequilla y se fríen los filetes se sazonan con sal y pimienta y se le suma la nata. Se sirve inmediatamente acompañados con el champiñón y la cebolla.
+Se corta en lÃ¡minas finas la cebolla y el champiÃ±Ã³n. En una sartÃ©n se pone la mitad de la mantequilla y se rehoga la cebolla hasta que este tierna se incorpora entonces los champiÃ±ones se sigue rehogando unos minutos mas y se apartan en una fuente manteniÃ©ndolo caliente. Se incorpora a la sartÃ©n el resto de la mantequilla y se frÃ­en los filetes se sazonan con sal y pimienta y se le suma la nata. Se sirve inmediatamente acompaÃ±ados con el champiÃ±Ã³n y la cebolla.
 0
 40
 24
 15
 150 gramos de cebollas=cebolla
-150 gramos de champiñones=champiñones
+150 gramos de champiÃ±ones=champiÃ±ones
 1 cucharadita de pimienta negra molida
 50 gramos de mantequilla=mantequilla
 4 filetes de ternera=ternera
-250 gramos de nata líquida=nata
+250 gramos de nata lÃ­quida=nata
 1 pizca de sal
 }
 {
 Pollo Kentucky
 Aves y caza
-Lavar los trozos de pollo. Mezclar en un bol la harina y la sal, añadir los huevos ligeramente batidos, la leche y la mantequilla fundida. Remover hasta conseguir una masa fina y homogénea. Rebozar cada trozo de pollo en la masa. Freír pocos trozos a la vez para que se doren bien, regulando el fuego para que se hagan por dentro y se doren por fuera. Escurrir en una servilleta de papel absorbente y guardar en el horno caliente hasta servir en la mesa.
+Lavar los trozos de pollo. Mezclar en un bol la harina y la sal, aÃ±adir los huevos ligeramente batidos, la leche y la mantequilla fundida. Remover hasta conseguir una masa fina y homogÃ©nea. Rebozar cada trozo de pollo en la masa. FreÃ­r pocos trozos a la vez para que se doren bien, regulando el fuego para que se hagan por dentro y se doren por fuera. Escurrir en una servilleta de papel absorbente y guardar en el horno caliente hasta servir en la mesa.
 0
 34
 17
@@ -183,7 +183,7 @@ Lavar los trozos de pollo. Mezclar en un bol la harina y la sal, añadir los huev
 Espaguetis a la Carbonara
 Pastas y arroces
 Cocer los espaguetis en abundante agua salada.
-Rallar los quesos y cortar el tocino en trocitos. En una sartén con poco aceite, freír el tocino, hasta que cambie el color ligeramente. En una fuente batir las yemas de los huevos (uno por comensal), el queso , la pimienta y cuidado con la sal, el queso suele llevar. Es mejor empezar poniendo en pequeñas cantidades, hasta que las yemas y los quesos hacen una crema y deja de saber a huevo. Colar la pasta una vez esté hervido. Incorporar a la crema la pasta en pequeñas porciones y remover rápidamente y seguir añadiendo. No debe de cocer el huevo. Se añade le tocino desgrasado al conjunto y se sirve al momento y caliente.
+Rallar los quesos y cortar el tocino en trocitos. En una sartÃ©n con poco aceite, freÃ­r el tocino, hasta que cambie el color ligeramente. En una fuente batir las yemas de los huevos (uno por comensal), el queso , la pimienta y cuidado con la sal, el queso suele llevar. Es mejor empezar poniendo en pequeÃ±as cantidades, hasta que las yemas y los quesos hacen una crema y deja de saber a huevo. Colar la pasta una vez estÃ© hervido. Incorporar a la crema la pasta en pequeÃ±as porciones y remover rÃ¡pidamente y seguir aÃ±adiendo. No debe de cocer el huevo. Se aÃ±ade le tocino desgrasado al conjunto y se sirve al momento y caliente.
 0
 17
 55
@@ -199,19 +199,19 @@ Rallar los quesos y cortar el tocino en trocitos. En una sartén con poco aceite,
 {
 Pizza de verduras
 Pastas y arroces
-Se pone en una sartén medio vasito de aceite con el pimiento verde, el pimiento rojo, la berenjena, la cebolla y el tomate picadito cuando esté doradito se le añade tomate casero se deja cocer un poco agregándole un poquito de azúcar, sal y se retira. Se disuelve la levadura en un poco de agua templada se añade la harina, medio vasito de aceite y sal y se amasa bien hasta que este bien compactada, se deja reposar durante 60 minutos. Se estira la masa y se distribuye en un molde antiadherente se reparte la salsa, se reparte el queso rallado y orégano y se echa un chorrito de aceite y se mete en el horno a temperatura alta y se deja unos 20 minutos.
+Se pone en una sartÃ©n medio vasito de aceite con el pimiento verde, el pimiento rojo, la berenjena, la cebolla y el tomate picadito cuando estÃ© doradito se le aÃ±ade tomate casero se deja cocer un poco agregÃ¡ndole un poquito de azÃºcar, sal y se retira. Se disuelve la levadura en un poco de agua templada se aÃ±ade la harina, medio vasito de aceite y sal y se amasa bien hasta que este bien compactada, se deja reposar durante 60 minutos. Se estira la masa y se distribuye en un molde antiadherente se reparte la salsa, se reparte el queso rallado y orÃ©gano y se echa un chorrito de aceite y se mete en el horno a temperatura alta y se deja unos 20 minutos.
 1
 6
 46
 10
 160 ccs de aceite
 1 litro de agua templada
-1 cucharita de azúcar=azucar
+1 cucharita de azÃºcar=azucar
 1 berenjena, un trozo=berenjena
 1 cebolla grande=cebolla
 500 gramos de harina=harina
 1 cucharita de levadura de panadero=levadura
-1 pizca de orégano
+1 pizca de orÃ©gano
 1 pimiento rojo, un trozo=pimiento rojo
 5 pimiento verde=pimiento verde
 1 cucharada de queso rallado=queso
@@ -222,7 +222,7 @@ Se pone en una sartén medio vasito de aceite con el pimiento verde, el pimiento 
 {
 Arroz con camarones
 Pastas y arroces
-Se cuece el arroz en el doble de agua de su cantidad con un poquito de sal y aceite por espacio de unos 20 minutos. En una sartén se calienta el aceite se dora la cebolla y el ajo, se echa el tomate, el laurel y el orégano. Se completa con vino blanco, se retirar el laurel, se le suma el camarón, el caldo, el pimiento cuando haya cocido un poco para que se evapore el vino se le echa el arroz ya cocido, el cilantro y la sal.
+Se cuece el arroz en el doble de agua de su cantidad con un poquito de sal y aceite por espacio de unos 20 minutos. En una sartÃ©n se calienta el aceite se dora la cebolla y el ajo, se echa el tomate, el laurel y el orÃ©gano. Se completa con vino blanco, se retirar el laurel, se le suma el camarÃ³n, el caldo, el pimiento cuando haya cocido un poco para que se evapore el vino se le echa el arroz ya cocido, el cilantro y la sal.
 0
 22
 45
@@ -231,11 +231,11 @@ Se cuece el arroz en el doble de agua de su cantidad con un poquito de sal y ace
 2 dientes de ajo
 1,5 tazas de arroz
 125 ccs de caldo
-100 gramos de camarón o langostinos=camarones
+100 gramos de camarÃ³n o langostinos=camarones
 20 gramos de cebolla = cebolla
 1 cucharadita de cilantro = cilantro
 1 hoja de laurel =laurel
-1 cucharadita de orégano
+1 cucharadita de orÃ©gano
 1 pimiento verde=pimiento verde
 1 pizca de sal
 3 tomates maduros=tomate
@@ -244,10 +244,10 @@ Se cuece el arroz en el doble de agua de su cantidad con un poquito de sal y ace
 {
 Ensalada con nueces
 Ensaladas y verduras
-En un envase, coloca la lechuga picada en trozos pequeños, añades el aceite, el vinagre, la sal, el azúcar y por último las nueces trituradas, revuelves todo muy bién.
+En un envase, coloca la lechuga picada en trozos pequeÃ±os, aÃ±ades el aceite, el vinagre, la sal, el azÃºcar y por Ãºltimo las nueces trituradas, revuelves todo muy biÃ©n.
 1
 2 cucharadas de aceite de oliva
-1 cucharada de azúcar
+1 cucharada de azÃºcar
 220 gramos de lechuga
 50 gramos de nueces picadas
 1 pizca de sal
@@ -256,15 +256,15 @@ En un envase, coloca la lechuga picada en trozos pequeños, añades el aceite, el 
 {
 Albondigas de carne
 Carnes
-Se pone en un bol la carne picada con ajo, perejil, huevo batido, el pan rallado y la sal y se amasa. Se hacen las bolas con las manos y se les pasa por la harina y se echan en una sartén con el aceite caliente. Se reservan cuando están fritas. En otra sartén se pone aceite y se fríe la cebolla hasta que esté dorada, se incorpora una cucharada de harina y se dora ligeramente, se echa el vaso de vino, el azafrán, la sal, el perejil, y si es necesario un poco de agua, se deja cocer unos minutos a fuego lento y se incorporan las albóndigas, se dejan cocer unos 15 minutos más. Se sirve caliente.
+Se pone en un bol la carne picada con ajo, perejil, huevo batido, el pan rallado y la sal y se amasa. Se hacen las bolas con las manos y se les pasa por la harina y se echan en una sartÃ©n con el aceite caliente. Se reservan cuando estÃ¡n fritas. En otra sartÃ©n se pone aceite y se frÃ­e la cebolla hasta que estÃ© dorada, se incorpora una cucharada de harina y se dora ligeramente, se echa el vaso de vino, el azafrÃ¡n, la sal, el perejil, y si es necesario un poco de agua, se deja cocer unos minutos a fuego lento y se incorporan las albÃ³ndigas, se dejan cocer unos 15 minutos mÃ¡s. Se sirve caliente.
 0
 45
 5
 9
-4 cucharadas de aceite (dendé)
+4 cucharadas de aceite (dendÃ©)
 400 ccs de agua
 2 dientes de ajo
-2 hebrases de azafrán
+2 hebrases de azafrÃ¡n
 500 gramos de carne picada=carne molida
 20 gramos de cebolla=cebolla
 80 gramos de harina (harina flor)=harina
@@ -277,7 +277,7 @@ Se pone en un bol la carne picada con ajo, perejil, huevo batido, el pan rallado
 {
 Pollo a la cerveza
 Aves y caza
-El pollo se secciona en trozos. Los ajos se pelan y se pican. En una sartén se pone a calentar aceite y se echan los ajos. El pollo se reboza en la harina y se fríe un poco en la misma sartén. Seguidamente se coloca en la cazuela. En la sartén donde se han dorado los ajos se echa la cebolla picada, cuando se dora se esparce sobre los trozos de pollo. Las zanahorias se lavan y se cortan en láminas y se cuecen en agua hasta que se ablanden. Se incorporan en la cazuela agregando la cerveza y el ajo, la pimienta, el estragón y la sal. Cuando está hecho el pollo, se echa la maicena diluída en un poco de agua para espesar la salsa.
+El pollo se secciona en trozos. Los ajos se pelan y se pican. En una sartÃ©n se pone a calentar aceite y se echan los ajos. El pollo se reboza en la harina y se frÃ­e un poco en la misma sartÃ©n. Seguidamente se coloca en la cazuela. En la sartÃ©n donde se han dorado los ajos se echa la cebolla picada, cuando se dora se esparce sobre los trozos de pollo. Las zanahorias se lavan y se cortan en lÃ¡minas y se cuecen en agua hasta que se ablanden. Se incorporan en la cazuela agregando la cerveza y el ajo, la pimienta, el estragÃ³n y la sal. Cuando estÃ¡ hecho el pollo, se echa la maicena diluÃ­da en un poco de agua para espesar la salsa.
 0
 40
 6
@@ -286,7 +286,7 @@ El pollo se secciona en trozos. Los ajos se pelan y se pican. En una sartén se p
 3 dientes de ajo=ajo
 1 cebolla=cebolla
 1 litro de cerveza=cerveza
-1 pizca de estragón
+1 pizca de estragÃ³n
 100 gramos de harina=harina
 20 gramos de maicena=maicena
 1 pizca de pimienta
@@ -297,7 +297,7 @@ El pollo se secciona en trozos. Los ajos se pelan y se pican. En una sartén se p
 {
 Aguacates con pimienta negra
 Ensaladas y verduras
-Se pelan y deshuesan los aguacates. Se parten en rodajas finas. Se disponen en una fuente y se aliñan con sal, la pimienta y el aceite. Para que el aguatate no se ponga negro dejaremos los huesos en la fuente hasta el momento de servir la ensalada.
+Se pelan y deshuesan los aguacates. Se parten en rodajas finas. Se disponen en una fuente y se aliÃ±an con sal, la pimienta y el aceite. Para que el aguatate no se ponga negro dejaremos los huesos en la fuente hasta el momento de servir la ensalada.
 1
 4
 25
@@ -309,13 +309,13 @@ Se pelan y deshuesan los aguacates. Se parten en rodajas finas. Se disponen en u
 }
 Ensalada de repollo
 Ensaladas y verduras
-En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se aliña con la sal, el pimentón, el aceite y el vinagre. Se remueve bien y se sirve.
+En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se aliÃ±a con la sal, el pimentÃ³n, el aceite y el vinagre. Se remueve bien y se sirve.
 1
 3
 11
 4
 20 ccs de aceite de oliva=aceite de oliva
-15 gramos de pimentón dulce=pimenton
+15 gramos de pimentÃ³n dulce=pimenton
 300 gramos de repollo (col)=repollo
 1 pizca de sal
 1 chorrito de vinagre=vinagre

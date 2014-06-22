@@ -46,7 +46,6 @@ HEADERS  += mainwindow.h \
     Grafo.h \
     dbConnection.h
 
-
 FORMS    += mainwindow.ui \
     setupwidget.ui \
     mainwidget.ui \

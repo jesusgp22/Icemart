@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include "dbConnection.h"
+#include<QTextCodec>
 
 int main(int argc, char *argv[])
 {
