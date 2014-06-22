@@ -43,11 +43,9 @@ HEADERS  += mainwindow.h \
     recipewidget.h \
     dietwidget.h \
     foodwidget.h \
-<<<<<<< HEAD
-    Grafo.h
-=======
+    Grafo.h \
     dbConnection.h
->>>>>>> 0ed9149f7357fbce408701c7e3c6e4d117f56eb6
+
 
 FORMS    += mainwindow.ui \
     setupwidget.ui \

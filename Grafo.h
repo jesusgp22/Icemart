@@ -7,8 +7,7 @@
 #include <tpl_graph.H>
 #include <tpl_spanning_tree.H>
 #include <Dijkstra.H>
-#include <QFile>
-#include <QTextStream>
+#include <QSqlQuery>
 using namespace std;
 
 struct Nodo
@@ -290,12 +289,11 @@ void conectarRecetasArchivo(Digrafo & digrafo)
 //funcion para cuando el usuario inserta recetas
 void conectarRecetas(Digrafo & digrafo)
 {
-    int c= 11;
+    int c= 10;
     for (Digrafo::Node_Iterator itor(digrafo); itor.has_current(); itor.next())
     {
         for (Digrafo::Node_Iterator itor2(digrafo); itor2.has_current(); itor2.next())
         {
-            //c= rand()%11+1;
             if( (itor.get_current_node()->get_info().tipo == "Proteinas") && itor2.get_current_node()->get_info().tipo == "Carbohidratos")
             {
                 if( noRepetirArcos(digrafo, itor.get_current()->get_info(), itor2.get_current()->get_info()) )
@@ -457,7 +455,8 @@ void penalizarReceta(Digrafo &dg, int np)
                 {
                     if(it.get_current_node()->get_info().gusto>=0 && it.get_current_node()->get_info().gusto<=10 )
                         it.get_current_node()->get_info().gusto+=1;
-                    //qDebug() << it.get_current_node()->get_info().gusto;
+                    else
+                        it.get_current_node()->get_info().gusto-=1;
                 }
             }
          }
@@ -483,7 +482,8 @@ void premiarReceta(Digrafo &dg, int np)
                 {
                     if(it.get_current_node()->get_info().gusto>=0 && it.get_current_node()->get_info().gusto<=10 )
                         it.get_current_node()->get_info().gusto-=1;
-                    //qDebug() << it.get_current_node()->get_info().gusto;
+                    else
+                        it.get_current_node()->get_info().gusto+=1;
                 }
             }
          }
@@ -511,10 +511,10 @@ void penalizarCombinacionRecetas1(Digrafo &dg)
         {
             if(arc->get_info()>=0 && arc->get_info()<=10 )
             {
-                qDebug() << arc->get_info();
                 arc->get_info()+= 1;
-                qDebug() << arc->get_info();
             }
+            else
+                arc->get_info()-=1;
         }
     }
 }
@@ -540,11 +540,9 @@ void penalizarCombinacionRecetas2(Digrafo &dg)
         if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
         {
             if(arc->get_info()>=0 && arc->get_info()<=10 )
-            {
-                qDebug() << arc->get_info();
                 arc->get_info()+= 1;
-                qDebug() << arc->get_info();
-            }
+            else
+                arc->get_info()-=1;
         }
     }
 }
@@ -568,11 +566,9 @@ void premiarCombinacionRecetas1(Digrafo &dg)
         if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
         {
             if(arc->get_info()>=0 && arc->get_info()<=10 )
-            {
-                qDebug() << arc->get_info();
                 arc->get_info()-= 1;
-                qDebug() << arc->get_info();
-            }
+            else
+                arc->get_info()+=1;
         }
     }
 }
@@ -598,12 +594,73 @@ void premiarCombinacionRecetas2(Digrafo &dg)
         if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
         {
             if(arc->get_info()>=0 && arc->get_info()<=10 )
-            {
-                qDebug() << arc->get_info();
                 arc->get_info()-= 1;
-                qDebug() << arc->get_info();
-            }
+            else
+                arc->get_info()+=1;
         }
+    }
+}
+
+//crea el grafo leyendo los datos de un archivo
+void insertarNodos1(Digrafo & g)
+{
+    Nodo receta;
+    //Modo Especial Fuente
+    receta.nombre= "Fuente";
+    receta.gusto= 0;
+    receta.tipo= "Desconocido";
+    receta.id= -1;
+
+    Digrafo::Node * n1 = g.search_node(receta);
+        if (n1 == NULL)
+            n1 = g.insert_node(receta);
+
+    //Modo Especial Sumidero
+    receta.nombre= "Sumidero";
+    receta.gusto= 0;
+    receta.tipo= "Desconocido";
+    receta.id= -1;
+    Digrafo::Node * n2 = g.search_node(receta);
+        if (n2 == NULL)
+            n2 = g.insert_node(receta);
+
+    QSqlQuery query;
+    query.exec("SELECT id,name,recipe_type,score FROM Recipe");
+    while(query.next())
+    {
+        if( ("Aves y caza" == query.value(2).toString()) || ("Carnes" == query.value(2).toString()) || ("Pescados y mariscos" == query.value(2).toString()) )
+        {
+            receta.id= query.value(0).toInt();
+            receta.nombre= query.value(1).toString().toUtf8().constData();
+            receta.gusto= query.value(3).toInt();
+            receta.tipo= "Proteinas";
+            Digrafo::Node * n = g.search_node(receta);
+                if (n == NULL)
+                    n = g.insert_node(receta);
+        }
+
+        if( ("Pastas y arroces" == query.value(2).toString()) || ("Sopas y cremas" == query.value(2).toString()) )
+        {
+            receta.id= query.value(0).toInt();
+            receta.nombre= query.value(1).toString().toUtf8().constData();
+            receta.gusto= query.value(3).toInt();
+            receta.tipo= "Carbohidratos";
+            Digrafo::Node * n = g.search_node(receta);
+                if (n == NULL)
+                    n = g.insert_node(receta);
+        }
+
+        if( ("Ensaladas y verduras" == query.value(2).toString()) )
+        {
+            receta.id= query.value(0).toInt();
+            receta.nombre= query.value(1).toString().toUtf8().constData();
+            receta.gusto= query.value(3).toInt();
+            receta.tipo= "Ensaladas";
+            Digrafo::Node * n = g.search_node(receta);
+                if (n == NULL)
+                    n = g.insert_node(receta);
+        }
+        conectarRecetas(g);
     }
 }
 

@@ -8,15 +8,9 @@ SugestionWidget::SugestionWidget(QWidget *parent) :
     ui(new Ui::SugestionWidget)
 {
     ui->setupUi(this);
-}
-
-SugestionWidget::~SugestionWidget()
-{
-    delete ui;
-}
-
-void SugestionWidget::on_pushButton_4_clicked()
-{
+    insertarNodos1(dg);
+    //conectarRecetasArchivo(dg);
+    conectarRecetas(dg);
     typedef Path<Digrafo> Camino;
     Camino path1;
     sugerir(dg, path1);
@@ -38,17 +32,37 @@ void SugestionWidget::on_pushButton_4_clicked()
     ui->checkBox_4->setText(ui->label_4->text());
 }
 
-void SugestionWidget::on_pushButton_6_clicked()
+SugestionWidget::~SugestionWidget()
 {
-    insertarNodos(dg);
-    conectarRecetasArchivo(dg);
-    ui->pushButton_4->setEnabled(true);
+    delete ui;
 }
 
-void SugestionWidget::on_pushButton_7_clicked()
+void SugestionWidget::on_pushButton_4_clicked()
 {
-    guardarGrafo(dg);
+    insertarNodos1(dg);
+    //conectarRecetasArchivo(dg);
+    conectarRecetas(dg);
+    typedef Path<Digrafo> Camino;
+    Camino path1;
+    sugerir(dg, path1);
+    string linea[3];
+    int i=0;
+    for(Camino::Iterator itor(path1); itor.has_current(); itor.next())
+    {
+        if( itor.get_current_node()->get_info().nombre != "Fuente" && itor.get_current_node()->get_info().nombre != "Sumidero" )
+        {
+            linea[i]= itor.get_current_node()->get_info().nombre;
+            i++;
+        }
+    }
+    ui->label_2->setText(QString::fromStdString(linea[0]));
+    ui->label_3->setText(QString::fromStdString(linea[1]));
+    ui->label_4->setText(QString::fromStdString(linea[2]));
+    ui->checkBox_2->setText(ui->label_2->text());
+    ui->checkBox_3->setText(ui->label_3->text());
+    ui->checkBox_4->setText(ui->label_4->text());
 }
+
 
 void SugestionWidget::on_checkBox_clicked()
 {
@@ -128,4 +142,53 @@ void SugestionWidget::on_checkBox_5_clicked()
         premiarCombinacionRecetas2(dg);
         qDebug() << "Se DESCLIKEO";
     }
+}
+
+void SugestionWidget::on_noButton_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(2);
+}
+
+void SugestionWidget::on_yesButton_clicked()
+{
+    ui->stackedWidget_2->setCurrentIndex(1);
+}
+
+void SugestionWidget::on_pushButton_clicked()
+{
+    Camino path1;
+    sugerir(dg, path1);
+    string linea[3];
+    int i=0;
+    for(Camino::Iterator itor(path1); itor.has_current(); itor.next())
+    {
+        if( itor.get_current_node()->get_info().nombre != "Fuente" && itor.get_current_node()->get_info().nombre != "Sumidero" )
+        {
+            linea[i]= itor.get_current_node()->get_info().nombre;
+            i++;
+        }
+    }
+    ui->label_2->setText(QString::fromStdString(linea[0]));
+    ui->label_3->setText(QString::fromStdString(linea[1]));
+    ui->label_4->setText(QString::fromStdString(linea[2]));
+    ui->checkBox_2->setText(ui->label_2->text());
+    ui->checkBox_3->setText(ui->label_3->text());
+    ui->checkBox_4->setText(ui->label_4->text());
+    ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void SugestionWidget::on_homeButton_clicked()
+{
+    emit setPage(0);
+}
+
+void SugestionWidget::on_homeButton_2_clicked()
+{
+    emit setPage(0);
+}
+
+void SugestionWidget::on_stackedWidget_currentChanged(int arg1)
+{
+    //ui->stackedWidget_2->setCurrentIndex(0);
+    //qDebug() << "Abrete pagina";
 }
