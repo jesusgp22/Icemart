@@ -16,5 +16,12 @@
         <file>res/backicon.png</file>
         <file>sql/food.txt</file>
         <file>sql/recipes.txt</file>
+        <file>res/chickenicon.png</file>
+        <file>res/eggsicon.png</file>
+        <file>res/fishicon.png</file>
+        <file>res/meaticon.png</file>
+        <file>res/riceicon.png</file>
+        <file>res/saladicon.png</file>
+        <file>res/soupicon.png</file>
     </qresource>
 </RCC>
