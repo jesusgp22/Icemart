@@ -81,6 +81,10 @@ void populateDatabase(){
         int equal_index = line.indexOf("=");
         QString values;
         //find out food id
+        if(equal_index==-1){
+            //nothing to do for this line, continue
+            continue;
+        }
         QString food_name = line.mid(equal_index+1);
         query.exec("SELECT id FROM Food WHERE name=\""+food_name+"\";");
         if(query.next()){ //get id
@@ -126,8 +130,7 @@ static bool createConnection()
 
     QString dbName = dir.filePath("Aplication.sqlite");
 
-    //comment next line
-    //QFile::remove(dbName);
+    //QFile::remove(dbName); //uncomment to wipe out database
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbName);
 
@@ -140,7 +143,7 @@ static bool createConnection()
 
 
     QSettings settings;
-    //settings.remove("dbInitialized"); //uncomment to refill database on each run!
+    //settings.remove("dbInitialized"); //uncomment to refill database
     if(!settings.contains("dbInitialized"))
     {
         createDatabase();

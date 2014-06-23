@@ -16,16 +16,18 @@ public:
     ~FoodWidget();
 
 private slots:
-    void on_addButton_clicked();
-
-    void on_removeButton_clicked();
 
     void on_homeButton_clicked();
 
     void on_searchButton_clicked();
 
+    void on_addFoodButton_clicked();
+
+    void on_removeFoodButton_clicked();
+
 private:
     Ui::FoodWidget *ui;
+    void FillTable();
 
 signals:
     void setPage(int index);

@@ -24,5 +24,7 @@
         <file>res/saladicon.png</file>
         <file>res/soupicon.png</file>
         <file>res/allicon.png</file>
+        <file>res/insertfridgeicon.png</file>
+        <file>res/removefridgeicon.png</file>
     </qresource>
 </RCC>

@@ -1,57 +1,23 @@
 #include "foodwidget.h"
 #include "ui_foodwidget.h"
-#include <QFile>
 #include <QDebug>
-#include <QTextStream>
+#include <QSqlQuery>
+#include <QSqlError>
+#include "addfooddialog.h"
+#include <QDate>
+#include <QMessageBox>
 
 FoodWidget::FoodWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FoodWidget)
 {
     ui->setupUi(this);
-    QFile file(":sql/food.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug()<<"No se pudo abrir el archivo de alimentos";
-    }
-    QTextStream in(&file);
-    int i = 0;
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        QStringList tokens = line.split(",");
-        ui->listWidget->insertItem(i++,tokens.at(1)+" "+tokens.at(2)+" "+tokens.at(3));
-    }
+    FillTable();
 }
 
 FoodWidget::~FoodWidget()
 {
     delete ui;
-}
-
-void FoodWidget::on_addButton_clicked()
-{
-    int row = ui->listWidget->currentRow();
-    if(row!=-1){
-        QStringList tokens = ui->listWidget->item(row)->text().split(" ");
-        int a = tokens.at(1).toInt();
-        a++;
-        QListWidgetItem *item = ui->listWidget->item(row);
-        item->setText(tokens.at(0)+" "+QString::number(a)+" "+tokens.at(2));
-    }
-}
-
-void FoodWidget::on_removeButton_clicked()
-{
-    int row = ui->listWidget->currentRow();
-    if(row!=-1){
-        QStringList tokens = ui->listWidget->item(row)->text().split(" ");
-        int a = tokens.at(1).toInt();
-        if(a==0){
-            return;
-        }
-        a--;
-        QListWidgetItem *item = ui->listWidget->item(row);
-        item->setText(tokens.at(0)+" "+QString::number(a)+" "+tokens.at(2));
-    }
 }
 
 void FoodWidget::on_homeButton_clicked()
@@ -61,5 +27,78 @@ void FoodWidget::on_homeButton_clicked()
 
 void FoodWidget::on_searchButton_clicked()
 {
+
+}
+
+void FoodWidget::on_addFoodButton_clicked()
+{
+    AddFoodDialog *dialog = new AddFoodDialog(this);
+    int ret_val = dialog->exec();
+    if(ret_val){
+        FillTable();
+    }
+    delete dialog;
+}
+
+void FoodWidget::FillTable(){
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
+    QSqlQuery query;
+    if(query.exec("SELECT Food.name,Item.amount,Food.measure_unit,Item.expiration_date,Item.id FROM Food JOIN Item WHERE Food.id=Item.food_id AND Item.amount>0")){
+        int i=0;
+        int j=0;
+        while(query.next()){
+            ui->tableWidget->insertRow(i);
+            QTableWidgetItem *item = new QTableWidgetItem(query.value(0).toString());
+            ui->tableWidget->setItem(i,j++,item);
+            item = new QTableWidgetItem(QString::number(query.value(1).toInt()));
+            item->setData(Qt::UserRole,query.value(4).toInt());
+            ui->tableWidget->setItem(i,j++,item);
+            item = new QTableWidgetItem(query.value(2).toString());
+            ui->tableWidget->setItem(i,j++,item);
+            item = new QTableWidgetItem(query.value(3).toDate().toString());
+            ui->tableWidget->setItem(i,j++,item);
+            i++;
+            j=0;
+        }
+    }else{
+        qDebug()<<"Couldn't retrieve food from database";
+        qDebug()<<query.lastError().text();
+    }
+}
+
+void FoodWidget::on_removeFoodButton_clicked()
+{
+    if(!ui->tableWidget->currentIndex().isValid()){
+        QMessageBox::critical(this,"Nada seleccionado","Seleccione un item de la lista para restar a la cantidad en existencia",QMessageBox::Ok);
+        return;
+    }
+    QModelIndexList indexList = ui->tableWidget->selectionModel()->selectedRows();
+    int row=0;
+    foreach (QModelIndex index, indexList) {
+       row = index.row();
+    }
+    QTableWidgetItem * item = ui->tableWidget->item(row,1);
+    int amount = item->text().toInt()-ui->spinBox->value();
+    QSqlQuery query;
+    int id = item->data(Qt::UserRole).toInt();
+    QString queryText;
+    if(amount==0){
+        queryText = "DELETE FROM Item WHERE id="+QString::number(id)+";";
+    }else{
+        queryText = "UPDATE Item SET amount="+ QString::number(amount) +" WHERE id="+QString::number(id)+";";
+    }
+    if(query.exec(queryText)){
+        qDebug()<<"Item updated properly";
+        if(amount==0){
+            FillTable();
+        }else{
+            item->setText(QString::number(amount));
+        }
+    }else{
+        qDebug()<<"Failed to update item";
+        qDebug()<<query.lastError().text();
+    }
+
 
 }
