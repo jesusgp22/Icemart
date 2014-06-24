@@ -23,5 +23,15 @@
         <file>res/riceicon.png</file>
         <file>res/saladicon.png</file>
         <file>res/soupicon.png</file>
+        <file>res/allicon.png</file>
+        <file>res/insertfridgeicon.png</file>
+        <file>res/removefridgeicon.png</file>
+        <file>res/checkicon.png</file>
+        <file>res/noicon.png</file>
+        <file>res/listrecipeicon.png</file>
+        <file>res/cookicon.png</file>
+        <file>res/marketicon.png</file>
+        <file>res/notebook.png</file>
+        <file>res/print.ico</file>
     </qresource>
 </RCC>

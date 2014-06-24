@@ -6,7 +6,7 @@ Se pelan y cortan las patatas a dados, así como los calabacines. Se ponen a her
 5
 26
 3
-3 calabacines=calabacines
+3 calabacines=calabacin
 5 papas=papa
 1 litro de agua
 1 vaso de leche=leche
@@ -149,7 +149,7 @@ Se limpian las truchas y se las riega con zumo de limón y se sazonan. Se pone e
 }
 {
 Filetes Strogonoff
-Carnes
+Carnes y guisos
 Se corta en láminas finas la cebolla y el champiñón. En una sartén se pone la mitad de la mantequilla y se rehoga la cebolla hasta que este tierna se incorpora entonces los champiñones se sigue rehogando unos minutos mas y se apartan en una fuente manteniéndolo caliente. Se incorpora a la sartén el resto de la mantequilla y se fríen los filetes se sazonan con sal y pimienta y se le suma la nata. Se sirve inmediatamente acompañados con el champiñón y la cebolla.
 0
 40
@@ -232,8 +232,8 @@ Se cuece el arroz en el doble de agua de su cantidad con un poquito de sal y ace
 1,5 tazas de arroz
 125 ccs de caldo
 100 gramos de camarón o langostinos=camarones
-20 gramos de cebolla = cebolla
-1 cucharadita de cilantro = cilantro
+20 gramos de cebolla =cebolla
+1 cucharadita de cilantro= cilantro
 1 hoja de laurel =laurel
 1 cucharadita de orégano
 1 pimiento verde=pimiento verde
@@ -246,16 +246,16 @@ Ensalada con nueces
 Ensaladas y verduras
 En un envase, coloca la lechuga picada en trozos pequeños, añades el aceite, el vinagre, la sal, el azúcar y por último las nueces trituradas, revuelves todo muy bién.
 1
-2 cucharadas de aceite de oliva
-1 cucharada de azúcar
-220 gramos de lechuga
-50 gramos de nueces picadas
+2 cucharadas de aceite de oliva=aceite de oliva
+1 cucharada de azúcar=azucar
+220 gramos de lechuga=lechuga
+50 gramos de nueces picadas=nuez
 1 pizca de sal
-1 cucharada de vinagre
+1 cucharada de vinagre=vinagre
 }
 {
 Albondigas de carne
-Carnes
+Carnes y guisos
 Se pone en un bol la carne picada con ajo, perejil, huevo batido, el pan rallado y la sal y se amasa. Se hacen las bolas con las manos y se les pasa por la harina y se echan en una sartén con el aceite caliente. Se reservan cuando están fritas. En otra sartén se pone aceite y se fríe la cebolla hasta que esté dorada, se incorpora una cucharada de harina y se dora ligeramente, se echa el vaso de vino, el azafrán, la sal, el perejil, y si es necesario un poco de agua, se deja cocer unos minutos a fuego lento y se incorporan las albóndigas, se dejan cocer unos 15 minutos más. Se sirve caliente.
 0
 45
@@ -307,6 +307,7 @@ Se pelan y deshuesan los aguacates. Se parten en rodajas finas. Se disponen en u
 15 gramos de pimienta negra molida
 5 gramos de sal
 }
+{
 Ensalada de repollo
 Ensaladas y verduras
 En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se aliña con la sal, el pimentón, el aceite y el vinagre. Se remueve bien y se sirve.
@@ -319,4 +320,380 @@ En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se 
 300 gramos de repollo (col)=repollo
 1 pizca de sal
 1 chorrito de vinagre=vinagre
+}
+{
+Crema a la Reina
+Sopas y cremas
+Se pone a hervir la pechuga con el agua, la zanahoria, el nabo, la cebolla y el puerro, todo cortado en trocitos y con el caldito. Cuando empieza a hervir se espuma. Se deja cocer hasta que esté tierna. Se deshuesa y se pasa por la trituradora con un poco de caldo caliente. Se reserva. En un cazo se pone la mantequilla y se rehoga la harina, se añade la leche caliente más tres cuartos de caldo de cocción, hasta que se consiga una crema clara. Se une a la pechuga. Se mezcla bien y se le da un hervor. Se conserva caliente al baño María hasta que se vaya a servir. En ese momento se deslíen las yemas en un poco de leche fría. Se une a la crema muy caliente sin dejar de remover para que quede bien ligada.
+0
+4
+15
+6
+1 litro de agua
+1 caldo de ave, pastilla
+1 cebolla=cebolla
+30 gramos de harina=harina
+2 huevos, yemas=huevo
+500 cc de leche=leche
+50 gramos de mantequilla=mantequilla
+50 gramos de nabos=nabo
+1 pechuga de gallina=gallina
+1 puerro=puerro
+1 zanahoria grande=zanahoria
+}
+{
+Crema de nabos
+Sopas y Cremas
+Se ponen a cocer los nabos y los calabacines. Se escurren y se conserva el agua por si la crema queda muy espesa. Se pasan por la trituradora. Se sazona con sal y pimienta y se le añade la nata líquida.
+1
+5
+15
+3
+500 gramos de calabacines=calabacin
+500 gramos de nabos=nabo
+100 gramos de nata líquida=nata liquida
+1 pizca de sal
+0,5 cucharadita es de pimienta negra molida
+}
+{
+Crema de lechuga
+Sopas y cremas
+Se pone a cocer las lechugas previamente lavadas con las patatas y el caldito. Se pasa por la trituradora. Se corrige de sal. Se añade la nata líquida.
+1
+6
+7
+2
+1 pastilla de caldito
+2 lechugas=lechuga
+100 gramos de nata líquida=nata liquida
+2 patatas gordas=patata
+1 pizca de sal
+}
+{
+Mousse de espárragos
+Sopas y cremas
+Se escurren bien los espárragos y se trituran en la trituradora con los demás ingredientes. Se unta un molde con mantequilla y si es posible que tenga un hueco central. Se vierte la mezcla y se cuece al baño Maria. Se desmolda y se deja escurrir bien. Se sirve bien caliente con salsa bechamel. Si se toma frío se sirve con salsa mayonesa.
+1
+12
+17
+8
+6 huevos=huevo
+2 lata de espárragos=espárrago
+25 gramos de mantequilla=mantequilla
+2 tazas de nata líquida=nata liquida
+100 gramos de queso=queso
+1 pizca de sal
+}
+{
+Crema de espárragos I
+Sopas y cremas
+En una cacerola se pone la mantequilla rehogando en ella la cebolla, la harina los espárragos, de los que se habrá guardado las puntas. Se agrega la leche y el caldo caliente. Se une todo bien y se deja hervir por 15 minutos. Se pasa por la trituradora. Se pone en una sopera con la nata liquida y las puntas de los espárragos. Se bate rápidamente y se sirve muy caliente.
+1
+9
+24
+4
+500 gramos de espárragos=espárrago
+50 gramos de mantequilla=mantequilla
+75 gramos de harina=harina
+1 cebollita muy picada=cebolla
+750 ccs de leche=leche
+750 ccs de caldo o consome
+}
+{
+Crema de champiñones II
+Sopas y cremas
+En una cacerola se pone la mantequilla rehogando en ella la cebolla, la harina y los champiñones. Guardando algunas cabecitas pequeñas. Se agrega la leche y el caldo caliente. Se une todo bien y se pasa por la trituradora. Se pone en la sopera. Se agregan las cabecitas de champiñón se termina de ligar con un poco de mantequilla.
+1
+5
+17
+5
+750 ccs de caldo
+1 cebollita muy picada=cebolla
+500 gramos de champiniones=champinion
+75 gramos de harina=harina
+750 ccs de leche=leche
+70 gramos de mantequilla=mantequilla
+}
+{
+Crema de tomate I
+Sopas y cremas
+Se rehoga con la mantequilla la cebolla picadita se añade la harina. Cuando todo este dorado se agregan los tomates picados sin piel ni pepitas. Se rehogan. Se añade la leche hirviendo, el caldo, la pimienta, la sal y el azúcar. Sin dejar de remover con la cuchara de madera. Se cuece unos 10 minutos. Se pasa por la trituradora o tercer brazo. Se sirve con cuadraditos de pan frito.
+1
+5
+19
+5
+1 cucharada de azúcar=azúcar
+1 caldo
+1 cebolla=cebolla
+80 gramos de harina=harina
+500 ccs de leche=leche
+125 gramos de mantequilla=mantequilla
+75 gramos de pan=pan
+1 pizca de pimienta negra molida
+1 pizca de sal
+1 kilo de tomates=tomate
+}
+{
+Crema de guisantes
+Sopas y cremas
+Se hace una bechamel, para lo que rehogaremos con la mitad de la mantequilla, la harina hasta que tome color y le iremos incorporando poco a poco la leche hasta conseguir una suave crema. Se sazona con sal y pimienta. Se le añade los guisantes cocidos con un caldito y pasados por la batidora más el resto de la mantequilla y el caldo de los guisantes si queda muy espeso. Se deja cocer lentamente durante 10 minutos. Se sirve en la sopera con el jamón picadito.
+1
+8
+13
+2
+1 caldito
+250 gramos de guisantes=guisante
+1 cucharada de harina=harina
+50 gramos de jamon york picado=jamon
+750 ccs de leche=leche
+100 gramos de mantequilla=mantequilla
+}
+{
+Crema de cangrejos
+Sopas y cremas
+Con una quinta parte de mantequilla se rehoga la zanahoria, las cebollitas y el perejil, todo finamente picado. Se agregan los cangrejos y cuando éstos estén rojos se añade el vino. Se pone a fuego fuerte para que éste se evapore. Se sacan los cangrejos y se pelan. Se reservan las colas de cangrejo. El resto de los cangrejos pelados se pasan por la batidora con el resto de la cocción. Se hace la bechamel, rehogando en mantequilla la harina hasta que tome color y añadiéndole la leche hasta conseguir una fina salsa, agregándole la crema de cangrejos con el resto de la mantequilla. Se añade el caldo hirviendo poco a poco. Servir en sopera bien caliente con las colas reservadas.
+0
+13
+19
+7
+500 ccs de caldo
+500 gramos de cangrejos=cangrejo
+2 chalotas o cebolla francesa=cebolla
+1 cucharada de harina=harina
+500 ccs de leche=leche
+100 gramos de mantequilla=mantequilla
+1 vasito de vino blanco
+1 zanahoria=zanahoria
+}
+{
+Puré de berenjenas
+Sopas y cremas
+Lavar las berenjenas, quitarles la parte de arriba del cabo y asarlas hasta que estén tiernas. Una vez tibias se trituran junto con la nata hasta conseguir una crema. Se le añade sal y pimienta. Servir. NOTA: Esta crema se puede acompañar con trocitos pequeños de pan frito.
+0
+5
+13
+5
+4 berenjenas=berenjena
+125 ccs de nata líquida=nata liquida
+1 pizca de sal
+1 pizca de pimienta
+}
+{
+Fabes con angulas
+Pescados y mariscos
+Las alubias (fabes en Asturias), se ponen a remojo la noche anterior a su preparación. Al día siguiente se les quita el agua del remojo; se echan las alubias junto con la cebolla, ajo, perejil, sal y un chorrito de aceite y se ponen a cocer a fuego lento (tapadas) hasta que estén cocidas, y se dejan a fuego lento hasta preparar las gulas o angulas. En una cazuela se pone el aceite de oliva sobrante con 4 dientes de ajo partidos en láminas, cuando el ajo está dorado (sin quemarlo) se le agregan las gulas, previamente sazonadas con sal, a fuego medio y se revuelve con una cuchara de madera hasta que chisporroteen las gulas. Se vierten las gulas sobre las alubias ya cocinadas y se revuelve todo dejando cocer 2 minutos, se deja reposar un poco y se sirve caliente.
+0
+24
+17
+10
+6 cucharadas de aceite de oliva=aceite de oliva
+6 dientes de ajo=ajo
+1 kilo de alubias blancas
+200 gramos de angulas=angula
+50 gramos de cebolla=cebolla
+1 hoja de laurel
+1 ramito de perejil=perejil
+1  pizca de sal
+}
+{
+Trucha al jamón
+Pescados y mariscos
+Colocar la trucha abierta por el medio sin espinas encima de una loncha fina de jamón y ponerla en el plato cubriendo de nuevo el pescado con otra loncha de jamón. Poner en el horno durante 10 minutos y servir (el tiempo dependerá del tamaño del pescado o a gusto de cada uno).
+0
+32
+12
+10
+40 gramos de jamón=jamon
+200 gramos de trucha=trucha
+}
+{
+Gambas al ajillo
+Pescados y mariscos
+Calentar el aceite en una cazuela de barro incorporar los ajos picaditos y las guindillas partidas, rehogar hasta que el ajo empiece a tomar color e incorporar las gambas sin dejar de remover unos 2 minutos. Aderezar de sal a gusto. Antes de servirlas conviene tapar la cazuela con tapa de barro o un plato. Se sirve y se prepara también en cazuelitas individuales al igual que las angulas.
+0
+4
+18
+5
+6 cucharadas de aceite=aceite
+4 dientes de ajo=ajo
+500 gramos de gambas peladas crudas=gamba
+4 guindillas de cayena
+1 pizca de sal
+}
+{
+Cazuela de pescados
+Pescados y mariscos
+Se limpia el pescado y los calamares. Se cortan el rape y la merluza en trozos parejos y se pasan por harina. Se cuecen y se pelan las gambas y los langostinos. Se cuecen los mejillones con vino blanco hasta que se abran. Se retiran de los mejillones la concha vacía. Se pone todo sobre una cazuela de barro a la que se unen los calamares. En una sartén se pone el aceite se rehogan los ajos y la cebolla, sofrito que se añade a la cazuela de pescados. Se flamea con coñac y se le añade el tomate y el caldo colado de los mejillones y langostinos. Se condimente con sal, pimienta y perejil y se cuece unos 15 minutos. Se sirve en la misma cazuela.
+0
+35
+15
+10
+4 cucharadas de aceite=aceite
+2 dientes de ajo=ajo
+250 gramos de calamares=calamar
+1 cebolla=cebolla
+1 vasito de coñac
+200 gramos de gambas=gamba
+4 langostinos=langostino
+250 gramos de mejillones=mejillon
+500 gramos de merluza=merluza
+1 ramito de perejil=perejil
+1 pizca de pimienta
+300 gramos de rape=rape
+1 pizca de sal
+125 ccs de vino blanco
+}
+{
+Cordero en salsa de verduras
+Carnes y guisos
+Sazonar la carne con sal y pimienta y pasarla por harina. Calentar un poco de aceite en una sartén y dorar las chuletas por ambos lados. Ponerlas en una cacerola. Echar las cebolletas a la sartén y dorarlas también. Agregar el pimiento cortado en tiras, luego el tomate y, por último, el caldo. Cuando hierva, echarlo sobre las chuletas y dejar cocer, tapado, a fuego lento una hora. Añadir las verduras y los champiñones y cocerlo media hora más. Rectificar la sazón y servirlo.
+0
+54
+16
+21
+80 ccs de aceite=aceite
+1 vaso de caldo
+6 cebollitas francesas=cebolla
+100 gramos de champiñones=champiñon
+6 cordero, chuletas (puede ser pierna o paletilla)=cordero
+1 cucharada de harina=harina
+1 menestra de verduras congeladas, un paquete
+1 pizca de pimienta
+1 pimiento rojo
+1 pizca de sal
+1 cucharada de salsa de tomate=tomate
+}
+{
+Pabellón Criollo
+Carnes y guisos
+Coloque la carne en una olla con agua, los dientes de ajo, media cebolla y un poco de sal. Cocinar durante 30 minutos. Mientras esto sucede, en una sartén, coloque los tomates pelados, el tomillo y las hojas de laurel, el pimiento en tiras y las cebollas ralladas, con tres cucharadas de aceite y los dientes de ajo picados. Cuando la carne esté bastante blanda y seca dejarla reposar unos 15 minutos. Luego, sujétela de manera que la fibra de carne quede en forma vertical para comenzar a desmecharla en finas tiras de unos 2-3 milímetros. Una vez terminado el proceso, espolvoree con el colorante para dar color al aceite y sofría por 5 minutos a fuego lento. Por último, coloque la salsa en la misma cacerola y dejar cocer durante 20 minutos más. Para servir: coloque en un plato ovalado, en un extremo una taza de arroz blanco cocido y escurrido, en el centro la carne ya lista y en el otro extremo dos o tres lonchas de plátano dorado en aceite vegetal y se acompañan de las carotas o alubias negras una vez cocinadas, Estas tiene que estar 24 horas antes en agua.
+0
+44
+57
+20
+200 ccs de aceite=aceite
+6 dientes de ajos=ajo
+300 gramos de arroz=arroz
+2 cebollas medianas=cebolla
+1 cucharada de colorante
+500 gramos de falda de vaca=carne mechada
+1 hoja de laurel
+1 pimiento rojo en tiras=pimiento rojo
+8 plátanos=platano
+1 pizca de sal
+250 gramos de tomate pelado=tomate
+1 ramito de tomillo
+}
+{
+Costillas de cerdo en salsa agridulce
+Carnes y guisos
+Se unen todos los ingredientes y se pasan por la trituradora. Con esta mezcla se bañan las costillas y se dejan en maceración 12 horas. Después se pasan a una fuente y se meten al horno hasta que estén doraditas.
+0
+44
+14
+14
+3 cucharadas de aceite=aceite
+2 dientes de ajo=ajo
+3 tazas de azucar moreno=azucar
+2 kilos de costillas de cerdo=costilla
+1 vaso de jerez seco
+2 limones=limon
+2 cucharaditas de mostaza en polvo
+2 naranjas=naranja
+150 ccs de salsa de soja
+}
+{
+Mistela
+Carnes y guisos
+Se trituran los ajos muy finamente y se rehogan en el aceite, cuando empiecen a estar dorados se añade el magro cortado en trocitos, el chorizo cortado en rebanaditas y el bacalao previamente desalado y desmigado. Cuando este casi todo cocido se añade la harina disuelta en un poco de agua. Se deja cocer un poco mas removiendo de vez en cuando para que no se pegue.
+0
+15
+5
+20
+200 gramos de bacalao=bacalao
+100 gramos de chorizo=chorizo
+200 gramos de magro
+2 cabezas de ajos=ajo
+1 cucharada de harina=harina
+80 ccs de aceite=aceite
+1 guindilla
+1 pizca de sal
+}
+{
+Risotto sencillo
+Pastas y arroces
+Rehogar en el aceite la cebolla y el pimiento y el tomate pelado y todo picadito. Añadir el azafrán y el arroz. Incorporar el caldo. Cocer durante unos 20 minutos con el laurel. Rociar con el queso rallado, antes de servir. Vino recomendado: Bodega Valdelosfrailes, Rosado, 2004, DO Cigales, Rosado.
+1
+22
+56
+10
+50 ccs de aceite=aceite
+300 gramos de arroz=arroz
+3 hebras de azafrán
+1 litro de caldo
+25 gramos de cebolla=cebolla
+1 hoja de laurel
+1 pimiento rojo=pimiento rojo
+80 gramos de queso rallado=queso
+1 pizca de sal
+1 tomate=tomate
+}
+{
+Pollo con verduras
+Aves y caza
+Una vez limpio se pone a macerar el pollo en el vino unas cuatro horas. Se escurre el pollo y se seca, reservando el jugo de la maceración. Se adoba con la mezcla de la sal y el ajo machacados. Se deja reposar otras cuatro horas. Pasado este tiempo se dora en el aceite bien caliente y se pasa a una cazuela junto con el aceite y la cebolla bien picada. Cuando la cebolla empiece a tomar color se le añade el vino de la maceración. Cuando el pollo empiece a estar tierno se le añaden las patatas y los guisantes. Se deja cocer hasta que el conjunto esté tierno. Se sirve adornado con los pimientos morrones cortados en tiritas.
+0
+45
+16
+10
+125 ccs de aceite=aceite
+500 ccs de vino blanco seco
+1 cebolla mediana=cebolla
+1 pollo en cuartos=pollo
+250 gramoses de guisantes=guisante
+3 pimientos morrón=pimiento
+3 dientes de ajo=ajo
+250 gramos de patatas cortadas en dados=patata
+1 cucharada de sal gorda
+}
+{
+Pechugas de pollo a la trufa
+Aves y caza
+Retirar la piel de las pechugas y darles dos cortes horizontales. Salpimentar y rellenar los cortes con las trufas cortadas en láminas. El resto de las trufas se cortan en trocitos y se reservan. Para que no se salgan las trufas de las pechugas se sujetan con unos palillos. Se pone aceite en una sartén y cuando esté caliente se pasan las pechugas, vuelta y vuelta. Se colocan en una cazuela. En la misma sartén se sofríe la verdura toda picadita. Se añade el caldo de ave y el de las trufas y se deja cocer un poco .Esta mezcla se vierte sobre las pechugas y se deja cocer hasta que las pechugas estén tiernas. En este momento se añade la nata líquida. Se sirven en lonchas finas o una por persona, sobre el lecho de las verduras y cubiertas por su salsa. Se adorna con el brécol y el resto de la trufa picada.
+0
+37
+10
+14
+4 cucharadas de aceite=aceite
+200 gramos de brecol=brecol
+1 vaso de ave, caldo
+1 chalota=chalota
+2 trufa, latita
+1 vaso de nata líquida=nata liquida
+2 kilos de pechugas de pollo=pollo
+1 pizca de pimienta
+2 puerros=puerro
+1 pizca de sal
+}
+{
+Ensalada con queso
+Ensaladas y verduras
+Cortar las verduras, las patatas y el queso y disponerlo en una ensaladera. Aliñar con el aceite, la sal y la pimienta. Acompañar la ensalada con el yogur aliñado con la paprika y el zumo de limón que se servirá según gustos.
+1
+6
+16
+6
+1 escarola=escarola
+200 gramos de tomates cherry=tomate
+2 patatas hervidas=patata
+1 pepino=pepino
+2 hojas de apio=apio
+1 lechuga morada=lechuga
+250 gramos de queso de cabra=queso
+20 ccs de aceite de oliva=aceite de oliva
+1 pizca de sal
+1 pizca de pimienta
+1 yogur natural
+1 zumo de limón=limon
+3 ccs de paprika
 }

@@ -23,8 +23,32 @@ private slots:
 
     void on_backButton_clicked();
 
+    void on_soupButton_clicked();
+
+    void on_allIcon_clicked();
+
+    void on_breakfastButton_clicked();
+
+    void on_fishButton_clicked();
+
+    void on_meatButton_clicked();
+
+    void on_chickenButton_clicked();
+
+    void on_saladButton_clicked();
+
+    void on_riceButton_clicked();
+
+    void on_searchButton_clicked();
+
+    void on_optionButton_clicked();
+
 private:
     Ui::RecipeWidget *ui;
+    int current_id;
+    void fillRecipeList(QString filter="");
+    void MakeRecipe();
+    void AddToMarketList();
 
 signals:
     void setPage(int index);

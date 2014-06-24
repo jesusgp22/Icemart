@@ -1,7 +1,8 @@
 CREATE TABLE IF NOT EXISTS Food(
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
         name VARCHAR(32) UNIQUE,
-        measure_unit VARCHAR(16)
+        measure_unit VARCHAR(16),
+        weekly_consumption FLOAT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS Recipe (
@@ -31,6 +32,13 @@ CREATE TABLE IF NOT EXISTS Ingredient (
         FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
 );
 
+CREATE TABLE IF NOT EXISTS VerboseIngredient (
+    id INTEGER PRIMARY KEY,
+    recipe_id,
+    verbose_name VARCHAR(64),
+    FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
+);
+
 
 CREATE TABLE IF NOT EXISTS Item (
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -38,4 +46,19 @@ CREATE TABLE IF NOT EXISTS Item (
         amount INT,
 	food_id INTEGER,
         FOREIGN KEY (food_id) REFERENCES Food(id)
+);
+
+CREATE TABLE IF NOT EXISTS MarketList (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        amount INTEGER,
+        food_id INTEGER,
+        FOREIGN KEY (food_id) REFERENCES Food(id)
+);
+
+CREATE TABLE IF NOT EXISTS Consumption(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    amount INT,
+    food_id INT,
+    consumption_date DATE,
+    FOREIGN KEY (food_id) REFERENCES Food(id)
 );

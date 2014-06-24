@@ -11,6 +11,8 @@
 #include <QStandardPaths>
 #include <QSqlError>
 
+#define WIPE false
+
 void createTables(QString &sqlLine)
 {
     QSqlQuery query;
@@ -39,15 +41,37 @@ void createDatabase()
 
 void populateDatabase(){
 
+    QFile file(":/sql/food.txt");
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        qDebug() << "cannot open resorce file food.txt";
+    QTextStream input(&file);
+    QSqlQuery query;
+    QString line;
+    int i=0;
+    while(!input.atEnd())
+    {
+        line = input.readLine();
+        int index = line.indexOf(":");
+        if(index==-1){
+            continue;
+        }
+        query.prepare("INSERT INTO Food (name, measure_unit) VALUES (?,?);");
+        QString name = line.mid(0,index);
+        QString measure_unit = line.mid(index+1);
+        query.addBindValue(name);
+        query.addBindValue(measure_unit);
+        if(query.exec()){
+            qDebug()<<"inserting"<<name<<measure_unit;
+        }
+    }
+
     QFile f(":/sql/recipes.txt");
     if(!f.open(QIODevice::ReadOnly | QIODevice::Text))
         qDebug() << "cannot open resorce file recipes.txt";
     QTextStream in(&f);
-    QSqlQuery query;
-    QString line;
     QString sqlPrefix = "INSERT INTO Recipe (name,recipe_type,preparation,vegetarian,prots,carbs,fats,cals) VALUES";
     QString sqlStatement = "";
-    int i=0;
+    i=0;
     while(!in.atEnd())
     {
         line = in.readLine();
@@ -81,6 +105,18 @@ void populateDatabase(){
         int equal_index = line.indexOf("=");
         QString values;
         //find out food id
+        if(equal_index==-1){
+            QSqlQuery _query;
+            _query.prepare("INSERT INTO VerboseIngredient (recipe_id, verbose_name) VALUES (?,?);");
+            _query.addBindValue(i+1);
+            _query.addBindValue(line.mid(0,equal_index-first_space_index-1));
+            if(_query.exec()){
+                qDebug()<<"Verbose ingredient added";
+            }else{
+                qDebug()<<"Failed to add verbose ingredient"<<_query.lastError().text();
+            }
+            continue;
+        }
         QString food_name = line.mid(equal_index+1);
         query.exec("SELECT id FROM Food WHERE name=\""+food_name+"\";");
         if(query.next()){ //get id
@@ -126,8 +162,9 @@ static bool createConnection()
 
     QString dbName = dir.filePath("Aplication.sqlite");
 
-    //comment next line
-    //QFile::remove(dbName);
+    if(WIPE){
+        QFile::remove(dbName);
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbName);
 
@@ -138,15 +175,26 @@ static bool createConnection()
         return false;
     }
 
-
     QSettings settings;
-    //settings.remove("dbInitialized"); //uncomment to refill database on each run!
+    if(WIPE){
+        settings.remove("dbInitialized"); //uncomment to refill database
+    }
     if(!settings.contains("dbInitialized"))
     {
         createDatabase();
         populateDatabase();
         settings.setValue("dbInitialized",true);
     }
+
+//    if(REFILLFOODFILE){
+//        if(!query.exec("SELECT name FROM Food")){
+//            qDebug()<<"failed to execute sql";
+//        }
+//        while(query.next()){
+//            out << query.value(0).toString()+'\n';
+//        }
+//    }
+
     return true;
 }
 

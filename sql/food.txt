@@ -1,7 +1,64 @@
-0,Manzana,0,unidades
-1,Pera,0,unidades
-2,Papa,0,unidades
-3,Pollo,0,gramos
-4,Carne,0,gramos
-5,Pezcado,0,gramos
-6,Leche,0,litros
+aceite:litros
+aceite de oliva:litros
+aguacate:unidades
+ajo:gramos
+anchoas:gramos
+azucar:gramos
+berenjena:unidades
+calabacin:unidades
+calabacines:unidades
+camarones:gramos
+cangrejo:gramos
+carne molida:gramos
+cebolla:unidades
+cebollin:gramos
+cerveza:litros
+champiñon:gramos
+cilantro:gramos
+espinaca:gramos
+espárrago:gramos
+gallina:gramos
+guisante:gramos
+harina:gramos
+huevo:unidades
+jamon:gramos
+jamon iberico:gramos
+jamon serrano:gramos
+jamon york:gramos
+laurel:gramos
+leche:litros
+lechuga:unidades
+levadura:gramos
+limon:unidades
+maicena:tazas
+mantequilla:gramos
+nabo:unidades
+nata:tazas
+nata liquida:tazas
+nuez moscada:gramos
+pan:unidades
+papa:unidades
+pasta:gramos
+patata:unidades
+pavo:gramos
+perejil:gramos
+pimenton:unidades
+pimiento rojo:unidades
+pimiento verde:unidades
+pollo:gramos
+puerro:gramos
+queso:gramos
+queso crema:tazas
+queso pecorino:gramos
+queso roquefort:gramos
+repollo:unidades
+salsa ketchup:litros
+ternera:gramos
+tocino ahumado:gramos
+tomate:unidades
+tomate en lata:latas
+truchas:unidades
+vinagre:litros
+vino blanco:ligros
+yogurt:tazas
+zanahoria:unidades
