@@ -20,6 +20,8 @@ private:
 
 signals:
     void setPage(int index);
+private slots:
+    void on_homeButton_clicked();
 };
 
 #endif // MARKETLISTWIDGET_H

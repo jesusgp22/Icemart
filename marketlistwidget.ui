@@ -142,8 +142,19 @@
         <item row="1" column="1">
          <widget class="QListWidget" name="listWidget">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+           <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 11pt &quot;Sans Serif&quot;;</string>
           </property>
+          <item>
+           <property name="text">
+            <string>Nabos 10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Huevos 30</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="1" column="2">
@@ -195,14 +206,40 @@
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
-        <string>Compras hechas</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/res/listrecipeicon.png</normaloff>:/res/listrecipeicon.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>Imprimir</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/res/print.ico</normaloff>:/res/print.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>

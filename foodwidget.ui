@@ -118,7 +118,7 @@
      <item>
       <widget class="QPushButton" name="addFoodButton">
        <property name="text">
-        <string>Meter Alimento</string>
+        <string>Agregar Alimento</string>
        </property>
        <property name="icon">
         <iconset resource="res.qrc">
@@ -142,7 +142,7 @@
      <item>
       <widget class="QPushButton" name="removeFoodButton">
        <property name="text">
-        <string>Sacar Alimento</string>
+        <string>Quitar Alimento</string>
        </property>
        <property name="icon">
         <iconset resource="res.qrc">

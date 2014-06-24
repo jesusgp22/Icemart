@@ -13,3 +13,8 @@ MarketListWidget::~MarketListWidget()
 {
     delete ui;
 }
+
+void MarketListWidget::on_homeButton_clicked()
+{
+    emit setPage(0);
+}

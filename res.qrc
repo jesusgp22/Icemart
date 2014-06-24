@@ -32,5 +32,6 @@
         <file>res/cookicon.png</file>
         <file>res/marketicon.png</file>
         <file>res/notebook.png</file>
+        <file>res/print.ico</file>
     </qresource>
 </RCC>
