@@ -17,11 +17,15 @@ public:
 
 private:
     Ui::MarketListWidget *ui;
+    void FillList();
 
 signals:
     void setPage(int index);
 private slots:
     void on_homeButton_clicked();
+    void calculateMarketList();
+    void on_makeListButton_clicked();
+    void on_pushButton_2_clicked();
 };
 
 #endif // MARKETLISTWIDGET_H

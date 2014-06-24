@@ -213,6 +213,13 @@ void RecipeWidget::MakeRecipe(){
         while(query.next()){
             food_id=query.value(0).toInt();
             amount=query.value(1).toInt();
+
+            auxquery.prepare("INSERT INTO Consumption (amount,food_id,consumption_date) VALUES (?,?,?);");
+            auxquery.addBindValue(amount);
+            auxquery.addBindValue(food_id);
+            auxquery.addBindValue(QDate::currentDate());
+            auxquery.exec();
+
             subquery.prepare("SELECT id,amount FROM Item WHERE food_id=? AND expiration_date>=? ");
             subquery.addBindValue(food_id);
             subquery.addBindValue(QDate::currentDate());

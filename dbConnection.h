@@ -175,10 +175,9 @@ static bool createConnection()
         return false;
     }
 
-
     QSettings settings;
     if(WIPE){
-    settings.remove("dbInitialized"); //uncomment to refill database
+        settings.remove("dbInitialized"); //uncomment to refill database
     }
     if(!settings.contains("dbInitialized"))
     {

@@ -81,8 +81,25 @@ void FoodWidget::on_removeFoodButton_clicked()
     QTableWidgetItem * item = ui->tableWidget->item(row,1);
     int amount = item->text().toInt()-ui->spinBox->value();
     QSqlQuery query;
+    QSqlQuery auxquery;
+
     int id = item->data(Qt::UserRole).toInt();
+
+    //register a consumption
+    auxquery.prepare("SELECT food_id FROM Item Where id=?;");
+    auxquery.addBindValue(id);
+    auxquery.exec();
+    auxquery.next();
+    int food_id = auxquery.value(0).toInt();
+    auxquery.prepare("INSERT INTO Consumption (amount,food_id,consumption_date) VALUES (?,?,?);");
+    auxquery.addBindValue(ui->spinBox->value());
+    auxquery.addBindValue(food_id);
+    auxquery.addBindValue(QDate::currentDate());
+    auxquery.exec();
+
+    //modify the item
     QString queryText;
+
     if(amount==0){
         queryText = "DELETE FROM Item WHERE id="+QString::number(id)+";";
     }else{

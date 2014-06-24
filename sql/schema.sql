@@ -50,13 +50,12 @@ CREATE TABLE IF NOT EXISTS Item (
 
 CREATE TABLE IF NOT EXISTS MarketList (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        expiration_date Date,
-        amount INT,
+        amount INTEGER,
         food_id INTEGER,
         FOREIGN KEY (food_id) REFERENCES Food(id)
 );
 
-CREATE TABLE IF NOT EXISTS Consuption(
+CREATE TABLE IF NOT EXISTS Consumption(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     amount INT,
     food_id INT,

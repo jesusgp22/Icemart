@@ -84,26 +84,24 @@
         <item row="0" column="1">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLabel" name="label">
-            <property name="minimumSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
+           <widget class="QPushButton" name="makeListButton">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hacer lista del mercado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap resource="res.qrc">:/res/marketicon.png</pixmap>
+            <property name="icon">
+             <iconset resource="res.qrc">
+              <normaloff>:/res/marketicon.png</normaloff>:/res/marketicon.png</iconset>
             </property>
-            <property name="scaledContents">
+            <property name="iconSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+            <property name="flat">
              <bool>true</bool>
             </property>
            </widget>
@@ -145,16 +143,6 @@
            <string notr="true">background-color: rgba(255, 255, 255, 0);
 font: 11pt &quot;Sans Serif&quot;;</string>
           </property>
-          <item>
-           <property name="text">
-            <string>Nabos 10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Huevos 30</string>
-           </property>
-          </item>
          </widget>
         </item>
         <item row="1" column="2">
