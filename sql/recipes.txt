@@ -6,7 +6,7 @@ Se pelan y cortan las patatas a dados, así como los calabacines. Se ponen a her
 5
 26
 3
-3 calabacines=calabacines
+3 calabacines=calabacin
 5 papas=papa
 1 litro de agua
 1 vaso de leche=leche
@@ -17,7 +17,7 @@ Se pelan y cortan las patatas a dados, así como los calabacines. Se ponen a her
 {
 Pisca andina
 Sopas y cremas
-Se coloca a hervir el agua con la cebolla, pimentón, cebollin, cilantro y ajos junto con la patatas .Al estar blanditas las patatas se le coloca la leche, el queso y el pan en trozos pequeños, se deja por 3 minutos hasta tibiar la leche, y al servir se le puede agregar cilantro picadito.  Es ideal para el desayuno solo o como primer plato.  
+Se coloca a hervir el agua con la cebolla, pimentón, cebollin, cilantro y ajos junto con la patatas .Al estar blanditas las patatas se le coloca la leche, el queso y el pan en trozos pequeños, se deja por 3 minutos hasta tibiar la leche, y al servir se le puede agregar cilantro picadito.  Es ideal para el desayuno solo o como primer plato.
 0
 8
 22
@@ -36,7 +36,7 @@ Se coloca a hervir el agua con la cebolla, pimentón, cebollin, cilantro y ajos 
 {
 Crema de espinacas
 Sopas y cremas
-Poner agua a hervir. Mientras pelar y trocear las patatas y las cebollas y poner a cocer. Cuando ya esté cocido, agregar las espinacas y el cubito de concentrado de carne y cocer unos 5 minutos más. Una vez hervido pasarlo todo por la batidora. Añadirle la nuez moscada y el yogurt, volver a batir para mezclar bien y servir.  
+Poner agua a hervir. Mientras pelar y trocear las patatas y las cebollas y poner a cocer. Cuando ya esté cocido, agregar las espinacas y el cubito de concentrado de carne y cocer unos 5 minutos más. Una vez hervido pasarlo todo por la batidora. Añadirle la nuez moscada y el yogurt, volver a batir para mezclar bien y servir.
 0
 4
 21
@@ -60,7 +60,7 @@ Se cuecen los huevos, se pelan y se seccionan.  Se les quita la yema, se agrega 
 10 gramos de azúcar=azucar
 1 cebolla=cebolla
 2 huevos, la clara=huevo
-400 gramos de guisantes=guisantes
+400 gramos de guisantes=guisante
 1 cucharada de harina=harina
 4 huevos=huevo
 100 gramos de jamón serrano=jamon serrano
@@ -100,7 +100,7 @@ Sobre una rebanada de pan se coloca una loncha de jamón ibérico, sobre esta un
 {
 Tostadas francesas
 Entradas y huevos
-Se mezclan los cuatro primeros ingredientes y se sumergen las rodajas de pan.  Se cocina cada una en una sartén con una cucharada de mantequilla hasta que esté bien dorada y cocida por ambos lados.  Servir con miel, mermelada, sirope o azúcar.  
+Se mezclan los cuatro primeros ingredientes y se sumergen las rodajas de pan.  Se cocina cada una en una sartén con una cucharada de mantequilla hasta que esté bien dorada y cocida por ambos lados.  Servir con miel, mermelada, sirope o azúcar.
 0
 10
 35
@@ -115,7 +115,7 @@ Se mezclan los cuatro primeros ingredientes y se sumergen las rodajas de pan.  S
 {
 Tortilla de calabacín
 Entradas y huevos
-Trocear el pimiento y los dientes de ajos, sazonar y sofreír.  Pelar y cortar el calabacín y agregar a la sartén, sazonar, remover y sofreír todo el conjunto a fuego lento. Cascar los huevos en un bol, añadir un pellizco de sal y batir.   Agregar el sofrito, retirando gran parte del aceite y añadir los taquitos de pavo, mezclar bien y verter sobre la sartén.  Cuando empiece a cuajar el huevo, darle la vuelta con la ayuda de un plato, repetir esta operación hasta que la tortilla esté totalmente hecha.  
+Trocear el pimiento y los dientes de ajos, sazonar y sofreír.  Pelar y cortar el calabacín y agregar a la sartén, sazonar, remover y sofreír todo el conjunto a fuego lento. Cascar los huevos en un bol, añadir un pellizco de sal y batir.   Agregar el sofrito, retirando gran parte del aceite y añadir los taquitos de pavo, mezclar bien y verter sobre la sartén.  Cuando empiece a cuajar el huevo, darle la vuelta con la ayuda de un plato, repetir esta operación hasta que la tortilla esté totalmente hecha.
 0
 29
 23
@@ -176,7 +176,7 @@ Lavar los trozos de pollo. Mezclar en un bol la harina y la sal, añadir los hue
 1 huevo=huevo
 150 ccs de leche=leche
 1 cucharadas de mantequilla fundida=mantequilla
-1,5 kilos de pollo, troceado en octavos=pollo
+2 kilos de pollo, troceado en octavos=pollo
 1 pellizco de sal
 }
 {
@@ -307,6 +307,7 @@ Se pelan y deshuesan los aguacates. Se parten en rodajas finas. Se disponen en u
 15 gramos de pimienta negra molida
 5 gramos de sal
 }
+{
 Ensalada de repollo
 Ensaladas y verduras
 En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se aliña con la sal, el pimentón, el aceite y el vinagre. Se remueve bien y se sirve.
@@ -320,3 +321,158 @@ En crudo se parte en finas tiras el repollo. Se deposita en una ensaladera y se 
 1 pizca de sal
 1 chorrito de vinagre=vinagre
 }
+{
+Crema a la Reina
+Sopas y cremas
+Se pone a hervir la pechuga con el agua, la zanahoria, el nabo, la cebolla y el puerro, todo cortado en trocitos y con el caldito. Cuando empieza a hervir se espuma. Se deja cocer hasta que esté tierna. Se deshuesa y se pasa por la trituradora con un poco de caldo caliente. Se reserva. En un cazo se pone la mantequilla y se rehoga la harina, se añade la leche caliente más tres cuartos de caldo de cocción, hasta que se consiga una crema clara. Se une a la pechuga. Se mezcla bien y se le da un hervor. Se conserva caliente al baño María hasta que se vaya a servir. En ese momento se deslíen las yemas en un poco de leche fría. Se une a la crema muy caliente sin dejar de remover para que quede bien ligada.
+0
+9
+15
+5
+1 litro de agua
+1 caldo de ave, pastilla
+1 cebolla=cebolla
+30 gramos de harina=harina
+2 huevos, yemas=huevo
+500 cc de leche=leche
+50 gramos de mantequilla=mantequilla
+50 gramos de nabos=nabo
+1 pechuga de gallina=gallina
+1 puerro=puerro
+1 zanahoria grande=zanahoria
+}
+{
+Crema de nabos
+Sopas y Cremas
+Se ponen a cocer los nabos y los calabacines. Se escurren y se conserva el agua por si la crema queda muy espesa. Se pasan por la trituradora. Se sazona con sal y pimienta y se le añade la nata líquida.
+1
+500 gramos de calabacines=calabacin
+500 gramos de nabos=nabo
+100 gramos de nata líquida=nata liquida
+1 pizca de sal
+1 cucharaditas de pimienta negra molida
+}
+{
+Crema de lechuga
+Sopas y cremas
+Se pone a cocer las lechugas previamente lavadas con las patatas y el caldito. Se pasa por la trituradora. Se corrige de sal. Se añade la nata líquida.
+1
+2
+13
+2
+1 pastilla de caldito
+2 lechugas=lechuga
+100 gramos de nata líquida=nata liquida
+2 patatas gordas=patata
+1 pizca de sal
+}
+{
+Mousse de espárragos
+Sopas y cremas
+Se escurren bien los espárragos y se trituran en la trituradora con los demás ingredientes. Se unta un molde con mantequilla y si es posible que tenga un hueco central. Se vierte la mezcla y se cuece al baño Maria. Se desmolda y se deja escurrir bien. Se sirve bien caliente con salsa bechamel. Si se toma frío se sirve con salsa mayonesa.
+1
+25
+25
+10
+6 huevos=huevo
+2 lata de espárragos=espárrago
+25 gramos de mantequilla=mantequilla
+2 tazas de nata líquida=nata liquida
+100 gramos de queso=queso
+1 pizca de sal
+}
+{
+Crema de espárragos I
+Sopas y cremas
+En una cacerola se pone la mantequilla rehogando en ella la cebolla, la harina los espárragos, de los que se habrá guardado las puntas. Se agrega la leche y el caldo caliente. Se une todo bien y se deja hervir por 15 minutos. Se pasa por la trituradora. Se pone en una sopera con la nata liquida y las puntas de los espárragos. Se bate rápidamente y se sirve muy caliente.
+1
+3
+15
+4
+500 gramos de espárragos=espárrago
+50 gramos de mantequilla=mantequilla
+75 gramos de harina=harina
+1 cebollita muy picada=cebolla
+750 ccs de leche=leche
+750 ccs de caldo o consome
+}
+{
+Crema de champiñones II
+Sopas y cremas
+En una cacerola se pone la mantequilla rehogando en ella la cebolla, la harina y los champiñones. Guardando algunas cabecitas pequeñas. Se agrega la leche y el caldo caliente. Se une todo bien y se pasa por la trituradora. Se pone en la sopera. Se agregan las cabecitas de champiñón se termina de ligar con un poco de mantequilla.
+1
+5
+18
+3
+750 ccs de caldo
+1 cebollita muy picada=cebolla
+500 gramos de champiñones=champiñon
+75 gramos de harina=harina
+750 ccs de leche=leche
+70 gramos de mantequilla=mantequilla
+}
+{
+Crema de tomate I
+Sopas y cremas
+Se rehoga con la mantequilla la cebolla picadita se añade la harina. Cuando todo este dorado se agregan los tomates picados sin piel ni pepitas. Se rehogan. Se añade la leche hirviendo, el caldo, la pimienta, la sal y el azúcar. Sin dejar de remover con la cuchara de madera. Se cuece unos 10 minutos. Se pasa por la trituradora o tercer brazo. Se sirve con cuadraditos de pan frito.
+1
+4
+20
+4
+1 cucharada de azúcar=azucar
+1 caldo
+1 cebolla=cebolla
+80 gramos de harina=harina
+500 ccs de leche=leche
+125 gramos de mantequilla=mantequilla
+75 gramos de pan=pan
+1 pizca de pimienta negra molida
+1 pizca de sal
+1 kilo de tomates=tomate
+}
+{
+Crema de guisantes
+Sopas y cremas
+Se hace una bechamel, para lo que rehogaremos con la mitad de la mantequilla, la harina hasta que tome color y le iremos incorporando poco a poco la leche hasta conseguir una suave crema. Se sazona con sal y pimienta. Se le añade los guisantes cocidos con un caldito y pasados por la batidora más el resto de la mantequilla y el caldo de los guisantes si queda muy espeso. Se deja cocer lentamente durante 10 minutos. Se sirve en la sopera con el jamón picadito.
+1
+3
+11
+2
+1 caldito
+250 gramos de guisantes=guisante
+1 cucharada de harina=harina
+50 gramos de jamon york picado=jamon
+750 ccs de leche=leche
+100 gramos de mantequilla=mantequilla
+}
+{
+Crema de cangrejos
+Sopas y cremas
+Con una quinta parte de mantequilla se rehoga la zanahoria, las cebollitas y el perejil, todo finamente picado. Se agregan los cangrejos y cuando éstos estén rojos se añade el vino. Se pone a fuego fuerte para que éste se evapore. Se sacan los cangrejos y se pelan. Se reservan las colas de cangrejo. El resto de los cangrejos pelados se pasan por la batidora con el resto de la cocción. Se hace la bechamel, rehogando en mantequilla la harina hasta que tome color y añadiéndole la leche hasta conseguir una fina salsa, agregándole la crema de cangrejos con el resto de la mantequilla. Se añade el caldo hirviendo poco a poco. Servir en sopera bien caliente con las colas reservadas.
+0
+15
+19
+7
+500 ccs de caldo
+500 gramos de cangrejos=cangrejo
+2 chalotas o cebolla francesa=cebolla
+1 cucharada de harina=harina
+500 ccs de leche=leche
+100 gramos de mantequilla=mantequilla
+1 vasito de vino blanco
+1 zanahoria=zanahoria
+}
+{
+Puré de berenjenas
+Sopas y cremas
+Lavar las berenjenas, quitarles la parte de arriba del cabo y asarlas hasta que estén tiernas. Una vez tibias se trituran junto con la nata hasta conseguir una crema. Se le añade sal y pimienta. Servir. NOTA: Esta crema se puede acompañar con trocitos pequeños de pan frito.
+0
+6
+19
+5
+4 berenjenas=berenjena
+125 ccs de nata líquida=nata liquida
+1 pizca de sal
+1 pizca de pimienta
+}
+sopas y cremas pg 1 completa

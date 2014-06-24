@@ -11,6 +11,8 @@
 #include <QStandardPaths>
 #include <QSqlError>
 
+#define WIPE false
+
 void createTables(QString &sqlLine)
 {
     QSqlQuery query;
@@ -39,15 +41,37 @@ void createDatabase()
 
 void populateDatabase(){
 
+    QFile file(":/sql/food.txt");
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        qDebug() << "cannot open resorce file food.txt";
+    QTextStream input(&file);
+    QSqlQuery query;
+    QString line;
+    int i=0;
+    while(!input.atEnd())
+    {
+        line = input.readLine();
+        int index = line.indexOf(":");
+        if(index==-1){
+            continue;
+        }
+        query.prepare("INSERT INTO Food (name, measure_unit) VALUES (?,?);");
+        QString name = line.mid(0,index);
+        QString measure_unit = line.mid(index+1);
+        query.addBindValue(name);
+        query.addBindValue(measure_unit);
+        if(query.exec()){
+            qDebug()<<"inserting"<<name<<measure_unit;
+        }
+    }
+
     QFile f(":/sql/recipes.txt");
     if(!f.open(QIODevice::ReadOnly | QIODevice::Text))
         qDebug() << "cannot open resorce file recipes.txt";
     QTextStream in(&f);
-    QSqlQuery query;
-    QString line;
     QString sqlPrefix = "INSERT INTO Recipe (name,recipe_type,preparation,vegetarian,prots,carbs,fats,cals) VALUES";
     QString sqlStatement = "";
-    int i=0;
+    i=0;
     while(!in.atEnd())
     {
         line = in.readLine();
@@ -130,7 +154,9 @@ static bool createConnection()
 
     QString dbName = dir.filePath("Aplication.sqlite");
 
-    //QFile::remove(dbName); //uncomment to wipe out database
+    if(WIPE){
+        QFile::remove(dbName);
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbName);
 
@@ -143,13 +169,25 @@ static bool createConnection()
 
 
     QSettings settings;
-    //settings.remove("dbInitialized"); //uncomment to refill database
+    if(WIPE){
+    settings.remove("dbInitialized"); //uncomment to refill database
+    }
     if(!settings.contains("dbInitialized"))
     {
         createDatabase();
         populateDatabase();
         settings.setValue("dbInitialized",true);
     }
+
+//    if(REFILLFOODFILE){
+//        if(!query.exec("SELECT name FROM Food")){
+//            qDebug()<<"failed to execute sql";
+//        }
+//        while(query.next()){
+//            out << query.value(0).toString()+'\n';
+//        }
+//    }
+
     return true;
 }
 
