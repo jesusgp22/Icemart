@@ -31,6 +31,13 @@ CREATE TABLE IF NOT EXISTS Ingredient (
         FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
 );
 
+CREATE TABLE IF NOT EXISTS VerboseIngredient (
+    id INTEGER PRIMARY KEY,
+    recipe_id,
+    verbose_name VARCHAR(64),
+    FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
+);
+
 
 CREATE TABLE IF NOT EXISTS Item (
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 

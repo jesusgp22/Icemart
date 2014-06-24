@@ -182,8 +182,7 @@ Lavar los trozos de pollo. Mezclar en un bol la harina y la sal, añadir los hue
 {
 Espaguetis a la Carbonara
 Pastas y arroces
-Cocer los espaguetis en abundante agua salada.
-Rallar los quesos y cortar el tocino en trocitos. En una sartén con poco aceite, freír el tocino, hasta que cambie el color ligeramente. En una fuente batir las yemas de los huevos (uno por comensal), el queso , la pimienta y cuidado con la sal, el queso suele llevar. Es mejor empezar poniendo en pequeñas cantidades, hasta que las yemas y los quesos hacen una crema y deja de saber a huevo. Colar la pasta una vez esté hervido. Incorporar a la crema la pasta en pequeñas porciones y remover rápidamente y seguir añadiendo. No debe de cocer el huevo. Se añade le tocino desgrasado al conjunto y se sirve al momento y caliente.
+Cocer los espaguetis en abundante agua salada. Rallar los quesos y cortar el tocino en trocitos. En una sartén con poco aceite, freír el tocino, hasta que cambie el color ligeramente. En una fuente batir las yemas de los huevos (uno por comensal), el queso , la pimienta y cuidado con la sal, el queso suele llevar. Es mejor empezar poniendo en pequeñas cantidades, hasta que las yemas y los quesos hacen una crema y deja de saber a huevo. Colar la pasta una vez esté hervido. Incorporar a la crema la pasta en pequeñas porciones y remover rápidamente y seguir añadiendo. No debe de cocer el huevo. Se añade le tocino desgrasado al conjunto y se sirve al momento y caliente.
 0
 17
 55
@@ -246,12 +245,15 @@ Ensalada con nueces
 Ensaladas y verduras
 En un envase, coloca la lechuga picada en trozos pequeños, añades el aceite, el vinagre, la sal, el azúcar y por último las nueces trituradas, revuelves todo muy bién.
 1
-2 cucharadas de aceite de oliva
-1 cucharada de azúcar
-220 gramos de lechuga
-50 gramos de nueces picadas
+8
+15
+1
+2 cucharadas de aceite de oliva=aceite de oliva
+1 cucharada de azúcar=azul
+220 gramos de lechuga=lechuga
+50 gramos de nueces picadas=nuez
 1 pizca de sal
-1 cucharada de vinagre
+1 cucharada de vinagre=vinagre
 }
 {
 Albondigas de carne

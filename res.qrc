@@ -26,5 +26,9 @@
         <file>res/allicon.png</file>
         <file>res/insertfridgeicon.png</file>
         <file>res/removefridgeicon.png</file>
+        <file>res/checkicon.png</file>
+        <file>res/noicon.png</file>
+        <file>res/listrecipeicon.png</file>
+        <file>res/cookicon.png</file>
     </qresource>
 </RCC>

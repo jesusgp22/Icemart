@@ -106,7 +106,15 @@ void populateDatabase(){
         QString values;
         //find out food id
         if(equal_index==-1){
-            //nothing to do for this line, continue
+            QSqlQuery _query;
+            _query.prepare("INSERT INTO VerboseIngredient (recipe_id, verbose_name) VALUES (?,?);");
+            _query.addBindValue(i+1);
+            _query.addBindValue(line.mid(0,equal_index-first_space_index-1));
+            if(_query.exec()){
+                qDebug()<<"Verbose ingredient added";
+            }else{
+                qDebug()<<"Failed to add verbose ingredient"<<_query.lastError().text();
+            }
             continue;
         }
         QString food_name = line.mid(equal_index+1);

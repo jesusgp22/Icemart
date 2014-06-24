@@ -36,15 +36,53 @@ void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
         ui->typeLabel->setText(query.value(2).toString()); //type
         ui->preparationText->setText(query.value(3).toString());
         QSqlQuery subquery;
-        QString subquerytext = "SELECT Ingredient.amount, Ingredient.verbose_name "
+        QString subquerytext = "SELECT Ingredient.amount, Ingredient.verbose_name, Ingredient.food_id "
                          "FROM Ingredient JOIN Recipe WHERE Ingredient.recipe_id=Recipe.id "
                          "AND Recipe.id="+QString::number(id)+";";
+        bool canCook=true;
         if(subquery.exec(subquerytext)){
             ui->ingredientText->clear();
             while(subquery.next()){
-                ui->ingredientText->insertPlainText(subquery.value(0).toString()+" "+subquery.value(1).toString()+"\n");
-
+                ui->ingredientText->insertPlainText(subquery.value(0).toString()+" "+subquery.value(1).toString());
+                //check if there is enough of this on the fridge and add the right icon
+                QSqlQuery subsubquery;
+                subsubquery.prepare("SELECT amount FROM Item WHERE food_id=?");
+                subsubquery.addBindValue(subquery.value(2).toInt());
+                if(subsubquery.exec()){
+                    int amount = 0;
+                    while(subsubquery.next()){
+                        amount+=subsubquery.value(0).toInt();
+                    }
+                    if(amount>=subquery.value(0).toInt()){
+                        ui->ingredientText->insertHtml("<img src=\":/res/checkicon.png\" height=\"20\" width=\"20\"><br>");
+                    }else{
+                        canCook=false;
+                        ui->ingredientText->insertHtml("<img src=\":/res/noicon.png\" height=\"20\" width=\"20\"><br>");
+                    }
+                }else{
+                    qDebug()<<subsubquery.lastError().text();
+                    ui->ingredientText->insertPlainText("\n");
+                }
             }
+            subquery.prepare("SELECT VerboseIngredient.verbose_name FROM VerboseIngredient JOIN Recipe WHERE VerboseIngredient.recipe_id=Recipe.id AND Recipe.id=?");
+            subquery.addBindValue(id);
+            if(subquery.exec()){
+                while(subquery.next()){
+                    ui->ingredientText->insertPlainText(subquery.value(0).toString());
+                    //set ok icon
+                    ui->ingredientText->insertHtml("<img src=\":/res/checkicon.png\" height=\"20\" width=\"20\"><br>");
+
+                }
+            }
+        if(canCook){
+            ui->statusLabel->setText("Todos los ingredientes disponibles!");
+            ui->optionButton->setIcon(QIcon(":/res/cookicon.png"));
+            ui->optionButton->setText("Preparar esta receta");
+        }else{
+            ui->statusLabel->setText("Faltan ingredientes!");
+            ui->optionButton->setIcon(QIcon(":/res/listrecipeicon.png"));
+            ui->optionButton->setText("Agregar a la lista de compras");
+        }
         }else{
             qDebug()<<"Couldn't retrieve ingredientes";
             qDebug()<<subquery.lastError().text();
@@ -52,6 +90,7 @@ void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     }else{
         qDebug()<<"Couldn't retrieve recipe from database";
     }
+
 
 }
 
