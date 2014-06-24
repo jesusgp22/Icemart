@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->setupWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     connect(ui->foodWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     connect(ui->recipeWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
+    connect(ui->marketListWidget,SIGNAL(setPage(int)),this,SLOT(setPageByIndex(int)));
     QSettings settings;
     if(!DEBUG){
         if(!settings.contains("initialized")){

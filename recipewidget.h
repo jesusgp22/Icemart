@@ -41,6 +41,8 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_optionButton_clicked();
+
 private:
     Ui::RecipeWidget *ui;
 

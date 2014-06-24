@@ -30,5 +30,7 @@
         <file>res/noicon.png</file>
         <file>res/listrecipeicon.png</file>
         <file>res/cookicon.png</file>
+        <file>res/marketicon.png</file>
+        <file>res/notebook.png</file>
     </qresource>
 </RCC>

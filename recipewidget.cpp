@@ -201,3 +201,12 @@ void RecipeWidget::on_searchButton_clicked()
         message.exec();
     }
 }
+
+void RecipeWidget::on_optionButton_clicked()
+{
+    if(ui->optionButton->text().at(0)=='P'){ //preparar receta
+
+    }else{ //agregar a la lista de compras
+
+    }
+}

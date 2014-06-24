@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     recipewidget.cpp \
     dietwidget.cpp \
     foodwidget.cpp \
-    addfooddialog.cpp
+    addfooddialog.cpp \
+    marketlistwidget.cpp
 
 HEADERS  += mainwindow.h \
     setupwidget.h \
@@ -46,7 +47,8 @@ HEADERS  += mainwindow.h \
     foodwidget.h \
     Grafo.h \
     dbConnection.h \
-    addfooddialog.h
+    addfooddialog.h \
+    marketlistwidget.h
 
 FORMS    += mainwindow.ui \
     setupwidget.ui \
@@ -55,7 +57,8 @@ FORMS    += mainwindow.ui \
     recipewidget.ui \
     dietwidget.ui \
     foodwidget.ui \
-    addfooddialog.ui
+    addfooddialog.ui \
+    marketlistwidget.ui
 
 RESOURCES += \
     res.qrc
