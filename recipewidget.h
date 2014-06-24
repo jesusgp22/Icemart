@@ -45,8 +45,10 @@ private slots:
 
 private:
     Ui::RecipeWidget *ui;
-
+    int current_id;
     void fillRecipeList(QString filter="");
+    void MakeRecipe();
+    void AddToMarketList();
 
 signals:
     void setPage(int index);

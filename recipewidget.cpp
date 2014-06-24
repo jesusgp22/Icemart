@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QMessageBox>
+#include <QDate>
 
 RecipeWidget::RecipeWidget(QWidget *parent) :
     QWidget(parent),
@@ -27,6 +28,7 @@ void RecipeWidget::on_homeButton_clicked()
 void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
     int id = item->data(Qt::UserRole).toInt();
+    this->current_id = id;
     QSqlQuery query;
     if(query.exec("SELECT * FROM Recipe WHERE id="+QString::number(id)+";")){
         query.next();
@@ -138,7 +140,7 @@ void RecipeWidget::on_fishButton_clicked()
 
 void RecipeWidget::on_meatButton_clicked()
 {
-    fillRecipeList("Carnes");
+    fillRecipeList("Carnes y guisos");
 }
 
 void RecipeWidget::on_chickenButton_clicked()
@@ -202,11 +204,57 @@ void RecipeWidget::on_searchButton_clicked()
     }
 }
 
+void RecipeWidget::MakeRecipe(){
+    QSqlQuery query,subquery,auxquery;
+    int food_id, amount;
+    query.prepare("SELECT Ingredient.food_id,Ingredient.amount FROM Ingredient JOIN Recipe WHERE Ingredient.recipe_id = Recipe.id AND Recipe.id=?;");
+    query.addBindValue(current_id);
+    if(query.exec()){
+        while(query.next()){
+            food_id=query.value(0).toInt();
+            amount=query.value(1).toInt();
+            subquery.prepare("SELECT id,amount FROM Item WHERE food_id=? AND expiration_date>=? ");
+            subquery.addBindValue(food_id);
+            subquery.addBindValue(QDate::currentDate());
+            if(subquery.exec()){
+                while(subquery.next()){
+                    int item_amount = subquery.value(1).toInt();
+                    qDebug()<<item_amount<<amount;
+                    if(item_amount>amount){
+                        //update the item and be done with this ingredient
+                        auxquery.prepare("UPDATE Item SET amount=? WHERE id=?");
+                        auxquery.addBindValue(item_amount-amount);
+                        auxquery.addBindValue(subquery.value(0));
+                        auxquery.exec();
+                        break;
+                    }else{ //consume and item completely and continue
+                        auxquery.prepare("DELETE FROM Item WHERE id=?");
+                        auxquery.addBindValue(subquery.value(0));
+                        auxquery.exec();
+                        amount -= item_amount;
+                        if(amount==0){
+                            break;
+                        }
+                    }
+                }
+            }else{
+                qDebug()<<"Couldn't retrieve items for this ingredient"<<subquery.lastError().text();
+            }
+        }
+    }else{
+        qDebug()<<"Query failed:"<<query.lastError().text();
+    }
+}
+
+void RecipeWidget::AddToMarketList(){
+
+}
+
 void RecipeWidget::on_optionButton_clicked()
 {
     if(ui->optionButton->text().at(0)=='P'){ //preparar receta
-
+        MakeRecipe();
     }else{ //agregar a la lista de compras
-
+        AddToMarketList();
     }
 }

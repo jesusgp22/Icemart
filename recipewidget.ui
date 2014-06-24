@@ -285,7 +285,7 @@ background-color: rgba(255, 255, 255, 130);}</string>
             </size>
            </property>
            <property name="text">
-            <string>Carnes</string>
+            <string>Carnes y Guisos</string>
            </property>
            <property name="icon">
             <iconset resource="res.qrc">
@@ -622,13 +622,6 @@ font: 75 15pt &quot;MV Boli&quot;;</string>
         </layout>
        </item>
       </layout>
-      <zorder>line_2</zorder>
-      <zorder>preparationText</zorder>
-      <zorder>statusLabel</zorder>
-      <zorder>optionButton</zorder>
-      <zorder>horizontalSpacer_3</zorder>
-      <zorder>horizontalSpacer_5</zorder>
-      <zorder>ingredientText</zorder>
      </widget>
     </widget>
    </item>

@@ -1,7 +1,8 @@
 CREATE TABLE IF NOT EXISTS Food(
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
         name VARCHAR(32) UNIQUE,
-        measure_unit VARCHAR(16)
+        measure_unit VARCHAR(16),
+        weekly_consumption FLOAT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS Recipe (
@@ -53,4 +54,12 @@ CREATE TABLE IF NOT EXISTS MarketList (
         amount INT,
         food_id INTEGER,
         FOREIGN KEY (food_id) REFERENCES Food(id)
+);
+
+CREATE TABLE IF NOT EXISTS Consuption(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    amount INT,
+    food_id INT,
+    consumption_date DATE,
+    FOREIGN KEY (food_id) REFERENCES Food(id)
 );
