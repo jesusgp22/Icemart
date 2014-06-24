@@ -8,6 +8,13 @@
 #include <tpl_spanning_tree.H>
 #include <Dijkstra.H>
 #include <QSqlQuery>
+#include <QSqlError>
+#include <QFile>
+#include <QTextStream>
+#include <QStandardPaths>
+#include <QDir>
+#include <QApplication>
+#include <QSettings>
 using namespace std;
 
 struct Nodo
@@ -73,25 +80,6 @@ string convertInt(int number)
     return returnvalue;
 }
 
-
-//para mostrar varios datos en cada nodo en la foto
-struct Draw_Node
-{
-    void operator()(Digrafo & g, Digrafo::Node * node, ofstream & output)
-    {
-        output << "[label=\"" << node->get_info().nombre << "\\" << 'n' << convertInt(node->get_info().gusto) << "\"]";
-    }
-};
-
-//para mostrar los arcos en la foto
-struct Draw_Arc
-{
-  void operator()(Digrafo & g, Digrafo::Arc * arc, ofstream & output)
-  {
-    output << "[label=\"" << arc->get_info().distancia << "\"]";
-  }
-};
-
 //lleva las cuentas de las distancias para el calculo del camino minimo
 struct Distancia
 {
@@ -110,122 +98,6 @@ struct Distancia
 const double Distancia::Max_Distance = numeric_limits<double>::infinity();
 
 const double Distancia::Zero_Distance = 0;
-
-//hace la conexion de los nodos especiales Fuente y Sumidero
-void insertar_arco(Digrafo & digrafo, const Nodo & src, const Nodo & tgt, const double & distancia)
-{
-    Digrafo::Node * n1 = digrafo.search_node(src);
-
-    if (n1 == NULL)
-        n1 = digrafo.insert_node(src);
-
-    Digrafo::Node * n2 = digrafo.search_node(tgt);
-
-    if (n2 == NULL)
-        n2 = digrafo.insert_node(tgt);
-
-    /*if(src.nombre=="Fuente")
-        digrafo.insert_arc(n1, n2, distancia);
-    if(tgt.nombre=="Sumidero")
-        digrafo.insert_arc(n1, n2, distancia);*/
-}
-
-//crea el grafo leyendo los datos de un archivo
-void insertarNodos(Digrafo & g)
-{
-    int gust, id;
-    string nom;
-    Nodo node;
-    ifstream entrada1("proteinas.txt");
-    ifstream entrada2("carbohidratos.txt");
-    ifstream entrada3("ensaladas.txt");
-
-    //Modo Especial Fuente
-    node.nombre= "Fuente";
-    node.gusto= 100;
-    node.tipo= "Desconocido";
-    node.id= id= -1;
-    typename Digrafo::Node * n1 = g.search_node(node);
-        if (n1 == NULL)
-            n1 = g.insert_node(node);
-
-    //Modo Especial Sumidero
-    node.nombre= "Sumidero";
-    node.gusto= 100;
-    node.tipo= "Desconocido";
-    node.id= id= -1;
-    typename Digrafo::Node * n2 = g.search_node(node);
-        if (n2 == NULL)
-            n2 = g.insert_node(node);
-
-    while(entrada1>>nom>>gust>>id)
-    {
-        node.nombre= nom;
-        node.gusto= gust;
-        node.tipo= "Proteinas";
-        node.id= id;
-        Digrafo::Node * n = g.search_node(node);
-        if (n == NULL)
-        {
-            n = g.insert_node(node);
-        }
-    }
-    while(entrada2>>nom>>gust>>id)
-    {
-        node.nombre= nom;
-        node.gusto= gust;
-        node.tipo= "Carbohidratos";
-        node.id= id;
-        Digrafo::Node * n = g.search_node(node);
-        if (n == NULL)
-        {
-            n = g.insert_node(node);
-        }
-    }
-    while(entrada3>>nom>>gust>>id)
-    {
-        node.nombre= nom;
-        node.gusto= gust;
-        node.tipo= "Ensaladas";
-        node.id= id;
-        Digrafo::Node * n = g.search_node(node);
-        if (n == NULL)
-        {
-            n = g.insert_node(node);
-        }
-    }
-    entrada1.close();
-    entrada2.close();
-    entrada3.close();
-}
-
-typedef Path<Digrafo> Dicamino;
-
-//funcion especial para imprimir Path<Digrafo> en foto
-void crear_dot(Dicamino &path, std::ofstream & output)
-{
-    output << "digraph" << " {" << endl;
-    output << "rankdir = \"LR\"" << endl<<endl;
-    size_t i=0;
-    for (Dicamino::Iterator itor(path); itor.has_current(); itor.next())
-    {
-        output << i << " [ ";
-        output << "label = \"" << itor.get_current_node()->get_info().nombre << "\\" << 'n' << convertInt(itor.get_current_node()->get_info().gusto) << "\"";
-        output << " ]" << endl;
-        i++;
-    }
-    output << endl;
-    i=0;
-    for (Dicamino::Iterator itor2(path); itor2.has_current(); itor2.next())
-    {
-        //cout << endl << itor2.get_current_arc()->get_info().distancia <<endl;
-        if(i < path.size()-1 )
-            output << i << " -> " << i+1 << " [label = \"" << itor2.get_current_arc()->get_info().distancia << "\" ]" << endl;
-        i++;
-    }
-    output << "}" << endl;
-    output.close();
-}
 
 typedef Path<Digrafo> Camino;
 
@@ -257,9 +129,9 @@ bool noRepetirArcos(Digrafo & digrafo, const Nodo src, const Nodo tgt)
 void conectarRecetasArchivo(Digrafo & digrafo)
 {
     ifstream entrada("arcos.txt");
-    int id1, id2;
+    int id1, id2, arc;
 
-    while(entrada>>id1>>id2)
+    while(entrada>>id1>>id2>>arc)
     {
         for(Node_Iterator<Digrafo> it(digrafo); it.has_current(); it.next())
         {
@@ -268,7 +140,7 @@ void conectarRecetasArchivo(Digrafo & digrafo)
                 if( it.get_current()->get_info().id == id1 && it2.get_current()->get_info().id == id2 )
                 {
                     if(noRepetirArcos(digrafo, it.get_current()->get_info(), it2.get_current()->get_info()))
-                        digrafo.insert_arc(it.get_current(), it2.get_current(), 11);
+                        digrafo.insert_arc(it.get_current(), it2.get_current(), arc);
                 }
                 if( (it.get_current()->get_info().nombre == "Fuente") && (it2.get_current()->get_info().tipo == "Proteinas") )
                 {
@@ -287,8 +159,16 @@ void conectarRecetasArchivo(Digrafo & digrafo)
 }
 
 //funcion para cuando el usuario inserta recetas
+//solo se llama cuando se modifica la lista de recetas en la base de datos
 void conectarRecetas(Digrafo & digrafo)
 {
+    QFile archivo("arcos.txt");
+    if(!archivo.open(QFile::WriteOnly | QFile::Text))
+    {
+        qDebug() << "Could not open file for writing";
+        return;
+    }
+    QTextStream out(&archivo);
     int c= 10;
     for (Digrafo::Node_Iterator itor(digrafo); itor.has_current(); itor.next())
     {
@@ -297,23 +177,35 @@ void conectarRecetas(Digrafo & digrafo)
             if( (itor.get_current_node()->get_info().tipo == "Proteinas") && itor2.get_current_node()->get_info().tipo == "Carbohidratos")
             {
                 if( noRepetirArcos(digrafo, itor.get_current()->get_info(), itor2.get_current()->get_info()) )
+                {
                     digrafo.insert_arc(itor.get_current(), itor2.get_current(), c);
+                    out << itor.get_current_node()->get_info().id << " " << itor2.get_current_node()->get_info().id << " " << c << endl;
+                }
             }
             if( (itor.get_current_node()->get_info().tipo == "Carbohidratos") && itor2.get_current_node()->get_info().tipo == "Ensaladas")
             {
                 if( noRepetirArcos(digrafo, itor.get_current()->get_info(), itor2.get_current()->get_info()) )
+                {
                     digrafo.insert_arc(itor.get_current(), itor2.get_current(), c);
+                    out << itor.get_current_node()->get_info().id << " " << itor2.get_current_node()->get_info().id << " " << c << endl;
+                }
             }
             //para conectar los nodos especiales con sus respectivos niveles
             if( (itor.get_current()->get_info().nombre == "Fuente") && (itor2.get_current()->get_info().tipo == "Proteinas") )
             {
                 if(noRepetirArcos(digrafo, itor.get_current()->get_info(), itor2.get_current()->get_info()))
+                {
                     digrafo.insert_arc(itor.get_current(), itor2.get_current(), 0);
+                    out << itor.get_current_node()->get_info().id << " " << itor2.get_current_node()->get_info().id << " " << c << endl;
+                }
             }
             if( (itor.get_current()->get_info().nombre == "Sumidero") && (itor2.get_current()->get_info().tipo == "Ensaladas") )
             {
                 if(noRepetirArcos(digrafo, itor2.get_current()->get_info(), itor.get_current()->get_info()))
+                {
                     digrafo.insert_arc(itor2.get_current(), itor.get_current(), 0);
+                    out << itor2.get_current_node()->get_info().id << " " << itor.get_current_node()->get_info().id << " " << c << endl;
+                }
             }
         }
     }
@@ -357,39 +249,36 @@ void normalizarCamino(Camino2 & cam)
     }
 }
 
-//guardar grafo (no guarda el grafo)
+//guarda el id1 id2 y el arco que los conecta
 void guardarGrafo(Digrafo &g)
 {
-    ofstream salida1("proteinas.txt", ios::trunc);
-    ofstream salida2("carbohidratos.txt", ios::trunc);
-    ofstream salida3("ensaladas.txt", ios::trunc);
-    ofstream salida4("arcos.txt", ios::trunc);
+    QString dataDir= QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    QDir dir(dataDir);
 
-    //guardo los nodos en sus respectivos archivos
-    for(Node_Iterator<Digrafo> it(g); it.has_current(); it.next())
+    if(!dir.exists())
     {
-        if( it.get_current()->get_info().tipo == "Proteinas" )
-            salida1 << it.get_current()->get_info().nombre << " " << it.get_current()->get_info().gusto << " " << it.get_current()->get_info().id << endl;
-        if( it.get_current()->get_info().tipo == "Carbohidratos" )
-        salida2 << it.get_current()->get_info().nombre << " " << it.get_current()->get_info().gusto << " " << it.get_current()->get_info().id << endl;
-        if( it.get_current()->get_info().tipo == "Ensaladas" )
-        salida3 << it.get_current()->get_info().nombre << " " << it.get_current()->get_info().gusto << " " << it.get_current()->get_info().id << endl;
+        if(!dir.mkpath(dataDir))
+        {
+            qDebug() << "Error creating directory";
+        }
     }
+    QString filename= dir.filePath("arcos.txt");
+    QFile archivo("arcos.txt");
+    if(!archivo.open(QFile::WriteOnly | QFile::Text))
+    {
+        qDebug() << "Could not open file for writing";
+        return;
+    }
+    QTextStream out(&archivo);
 
     //guardo los pares ordenados para los arcos
     for( Digrafo::Arc_Iterator arc_itor(g); arc_itor.has_current(); arc_itor.next() )
     {
         Digrafo::Arc * arc = arc_itor.get_current_arc();
-        if( arc->get_info().distancia != 0 )
-            salida4 << g.get_src_node(arc)->get_info().id << " " << g.get_tgt_node(arc)->get_info().id << endl;
+        out << g.get_src_node(arc)->get_info().id << " " << g.get_tgt_node(arc)->get_info().id << " " << arc->get_info().distancia << endl;
     }
-    salida1.close();
-    salida2.close();
-    salida3.close();
-    salida4.close();
+    archivo.close();
 }
-
-typedef Path<Digrafo> Camino;
 
 void sugerir(Digrafo &dg, Camino &path)
 {
@@ -437,6 +326,18 @@ void sugerir(Digrafo &dg, Camino &path)
     path= path3;
 }
 
+//modifica el gusto en la base de datos
+void aprendizajeReceta(Nodo receta)
+{
+    QString comando;
+    QSqlQuery query;
+    //query.exec("UPDATE Recipe SET score=10 WHERE id==1");
+    comando= "UPDATE Recipe SET score=";
+    comando+=QString::fromStdString(convertInt(receta.gusto))+" WHERE id="+QString::fromStdString(convertInt(receta.id));
+    query.exec(comando);
+    //qDebug() << comando;
+}
+
 //penaliza los gustos de cada receta: +1
 //np especifica si es la receta1, receta2 o receta3
 void penalizarReceta(Digrafo &dg, int np)
@@ -451,12 +352,16 @@ void penalizarReceta(Digrafo &dg, int np)
         {
             if(i==np)
             {
-                if(itor.get_current_node()->get_info().nombre == it.get_current_node()->get_info().nombre)
+                if(itor.get_current_node()->get_info().id == it.get_current_node()->get_info().id)
                 {
-                    if(it.get_current_node()->get_info().gusto>=0 && it.get_current_node()->get_info().gusto<=10 )
-                        it.get_current_node()->get_info().gusto+=1;
+                    it.get_current_node()->get_info().gusto+=1;
+                    if(it.get_current_node()->get_info().gusto<=10)
+                        aprendizajeReceta(it.get_current_node()->get_info());
                     else
-                        it.get_current_node()->get_info().gusto-=1;
+                    {
+                        it.get_current_node()->get_info().gusto=11;
+                        aprendizajeReceta(it.get_current_node()->get_info());
+                    }
                 }
             }
          }
@@ -478,12 +383,14 @@ void premiarReceta(Digrafo &dg, int np)
         {
             if(i==np)
             {
-                if(itor.get_current_node()->get_info().nombre == it.get_current_node()->get_info().nombre)
+                if(itor.get_current_node()->get_info().id == it.get_current_node()->get_info().id)
                 {
-                    if(it.get_current_node()->get_info().gusto>=0 && it.get_current_node()->get_info().gusto<=10 )
-                        it.get_current_node()->get_info().gusto-=1;
-                    else
-                        it.get_current_node()->get_info().gusto+=1;
+                    it.get_current_node()->get_info().gusto-=1;
+                    if(it.get_current_node()->get_info().gusto>=0)
+                    {
+                        aprendizajeReceta(it.get_current_node()->get_info());
+                        qDebug() << it.get_current_node()->get_info().gusto;
+                    }
                 }
             }
          }
@@ -507,13 +414,10 @@ void penalizarCombinacionRecetas1(Digrafo &dg)
         Digrafo::Arc * arc = it.get_current();
         Digrafo::Node * src = dg.get_src_node(arc);
         Digrafo::Node * tgt = dg.get_tgt_node(arc);
-        if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
+        if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
-            if(arc->get_info()>=0 && arc->get_info()<=10 )
-            {
-                arc->get_info()+= 1;
-            }
-            else
+            arc->get_info()+= 1;
+            if(arc->get_info()==12)
                 arc->get_info()-=1;
         }
     }
@@ -537,11 +441,10 @@ void penalizarCombinacionRecetas2(Digrafo &dg)
         Digrafo::Arc * arc = it.get_current();
         Digrafo::Node * src = dg.get_src_node(arc);
         Digrafo::Node * tgt = dg.get_tgt_node(arc);
-        if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
+        if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
-            if(arc->get_info()>=0 && arc->get_info()<=10 )
-                arc->get_info()+= 1;
-            else
+            arc->get_info()+= 1;
+            if(arc->get_info()==12)
                 arc->get_info()-=1;
         }
     }
@@ -563,11 +466,10 @@ void premiarCombinacionRecetas1(Digrafo &dg)
         Digrafo::Arc * arc = it.get_current();
         Digrafo::Node * src = dg.get_src_node(arc);
         Digrafo::Node * tgt = dg.get_tgt_node(arc);
-        if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
+        if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
-            if(arc->get_info()>=0 && arc->get_info()<=10 )
-                arc->get_info()-= 1;
-            else
+            arc->get_info()-= 1;
+            if(arc->get_info()==-1)
                 arc->get_info()+=1;
         }
     }
@@ -591,11 +493,10 @@ void premiarCombinacionRecetas2(Digrafo &dg)
         Digrafo::Arc * arc = it.get_current();
         Digrafo::Node * src = dg.get_src_node(arc);
         Digrafo::Node * tgt = dg.get_tgt_node(arc);
-        if( (src->get_info().nombre == it1.get_current_node()->get_info().nombre) && (tgt->get_info().nombre == it2.get_current_node()->get_info().nombre) )
+        if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
-            if(arc->get_info()>=0 && arc->get_info()<=10 )
-                arc->get_info()-= 1;
-            else
+            arc->get_info()-= 1;
+            if(arc->get_info()==-1)
                 arc->get_info()+=1;
         }
     }
@@ -619,7 +520,7 @@ void insertarNodos1(Digrafo & g)
     receta.nombre= "Sumidero";
     receta.gusto= 0;
     receta.tipo= "Desconocido";
-    receta.id= -1;
+    receta.id= -2;
     Digrafo::Node * n2 = g.search_node(receta);
         if (n2 == NULL)
             n2 = g.insert_node(receta);
@@ -635,8 +536,8 @@ void insertarNodos1(Digrafo & g)
             receta.gusto= query.value(3).toInt();
             receta.tipo= "Proteinas";
             Digrafo::Node * n = g.search_node(receta);
-                if (n == NULL)
-                    n = g.insert_node(receta);
+            if (n == NULL)
+                n = g.insert_node(receta);
         }
 
         if( ("Pastas y arroces" == query.value(2).toString()) || ("Sopas y cremas" == query.value(2).toString()) )
@@ -646,8 +547,9 @@ void insertarNodos1(Digrafo & g)
             receta.gusto= query.value(3).toInt();
             receta.tipo= "Carbohidratos";
             Digrafo::Node * n = g.search_node(receta);
-                if (n == NULL)
-                    n = g.insert_node(receta);
+            if (n == NULL)
+                n = g.insert_node(receta);
+            //qDebug() << query.value(0).toInt() << " " << query.value(1).toString();
         }
 
         if( ("Ensaladas y verduras" == query.value(2).toString()) )
@@ -657,10 +559,20 @@ void insertarNodos1(Digrafo & g)
             receta.gusto= query.value(3).toInt();
             receta.tipo= "Ensaladas";
             Digrafo::Node * n = g.search_node(receta);
-                if (n == NULL)
-                    n = g.insert_node(receta);
+            if (n == NULL)
+                n = g.insert_node(receta);
+            //aprendizajeReceta(receta);
         }
+        qDebug() << query.value(0).toInt() << query.value(1).toString() << query.value(3).toString();
+    }
+    QSettings settings;
+    if(!settings.contains("arcosInicializados"))
+    {
         conectarRecetas(g);
+        settings.setValue("arcosInicializados",true);
+    }else{
+    //conectarRecetas(g);
+        conectarRecetasArchivo(g);
     }
 }
 

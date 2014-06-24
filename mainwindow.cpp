@@ -36,3 +36,8 @@ MainWindow::~MainWindow()
 void MainWindow::setPageByIndex(int index){
     ui->stackedWidget->setCurrentIndex(index);
 }
+
+void MainWindow::on_stackedWidget_currentChanged(int arg1)
+{
+
+}
