@@ -17,7 +17,7 @@ MarketListWidget::MarketListWidget(QWidget *parent) :
     FillList();
 }
 
-MarketListWidget::FillList(){
+void MarketListWidget::FillList(){
     QSqlQuery query;
     if(query.exec("SELECT Food.id, Food.name, MarketList.amount,Food.measure_unit FROM MarketList JOIN Food WHERE MarketList.food_id=Food.id")){
         int i=0;
