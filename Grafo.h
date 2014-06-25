@@ -170,7 +170,7 @@ void conectarRecetas(Digrafo & digrafo)
         return;
     }
     QTextStream out(&archivo);
-    int c= 10;
+    int c= 5;
     for (Digrafo::Node_Iterator itor(digrafo); itor.has_current(); itor.next())
     {
         for (Digrafo::Node_Iterator itor2(digrafo); itor2.has_current(); itor2.next())
@@ -569,6 +569,7 @@ void insertarNodos1(Digrafo & g)
         //qDebug() << query.value(0).toInt() << query.value(1).toString() << query.value(3).toString();
     }
     QSettings settings;
+    settings.remove("arcosInicializados");
     if(!settings.contains("arcosInicializados"))
     {
         conectarRecetas(g);

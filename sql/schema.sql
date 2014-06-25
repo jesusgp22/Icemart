@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS Recipe (
 	name VARCHAR(64),
 	recipe_type VARCHAR(32),
 	preparation TEXT,
-        score TINYINT DEFAULT 10,
+        score TINYINT DEFAULT 5,
 	vegetarian BOOLEAN,
         #dificulty VARCHAR(16),
         #prep_time VARCHAR(10),
