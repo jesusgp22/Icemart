@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>654</width>
-    <height>486</height>
+    <height>505</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,22 +23,132 @@
 }</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>190</y>
-         <width>181</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Generando Sugerencias ...</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>144</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <item>
+          <spacer name="horizontalSpacer_36">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>227</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>120</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="res.qrc">:/res/cookicon.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_37">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>227</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_20">
+         <item>
+          <spacer name="horizontalSpacer_38">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="styleSheet">
+            <string notr="true">font: 20pt &quot;Lobster 1.4&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Generando Sugerencias</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_39">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>143</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="page_2">
       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -134,7 +244,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/res/fishicon.png</pixmap>
+                <pixmap resource="res.qrc">:/res/fishicon.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -312,7 +422,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/res/riceicon.png</pixmap>
+                <pixmap resource="res.qrc">:/res/riceicon.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -490,7 +600,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/res/saladicon.png</pixmap>
+                <pixmap resource="res.qrc">:/res/saladicon.png</pixmap>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
@@ -603,7 +713,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget_2">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="inputPage">
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -914,7 +1024,7 @@
               <string>Volver al inicio</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="res.qrc">
                <normaloff>:/res/homeicon.png</normaloff>:/res/homeicon.png</iconset>
              </property>
              <property name="iconSize">
@@ -1048,7 +1158,7 @@
                 <string>Nueva Sugerencia</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="res.qrc">
                  <normaloff>:/res/mealicon.png</normaloff>:/res/mealicon.png</iconset>
                </property>
                <property name="iconSize">
@@ -1065,7 +1175,7 @@
                 <string>Volver al inicio</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="res.qrc">
                  <normaloff>:/res/homeicon.png</normaloff>:/res/homeicon.png</iconset>
                </property>
                <property name="iconSize">
@@ -1097,60 +1207,15 @@
        </item>
       </layout>
       <zorder>stackedWidget_2</zorder>
-      <zorder>label_2</zorder>
-      <zorder>label_3</zorder>
-      <zorder>label_4</zorder>
       <zorder>line</zorder>
-      <zorder>imagenProteina</zorder>
-      <zorder>imagenCarbohidrato</zorder>
-      <zorder>imagenEnsalada</zorder>
-      <zorder>calsProtLabel</zorder>
-      <zorder>calsCarbLabel</zorder>
-      <zorder>saladCalsLabel</zorder>
-      <zorder>pushButton_2</zorder>
-      <zorder>pushButton_3</zorder>
-      <zorder>pushButton_4</zorder>
       <zorder>label_14</zorder>
-      <zorder>horizontalSpacer_10</zorder>
-      <zorder>horizontalSpacer_11</zorder>
-      <zorder>horizontalSpacer_12</zorder>
-      <zorder>horizontalSpacer_13</zorder>
-      <zorder>horizontalSpacer_14</zorder>
-      <zorder>horizontalSpacer_15</zorder>
-      <zorder>horizontalSpacer_16</zorder>
-      <zorder>horizontalSpacer_17</zorder>
-      <zorder>horizontalSpacer_18</zorder>
-      <zorder>horizontalSpacer_19</zorder>
-      <zorder>horizontalSpacer_20</zorder>
-      <zorder>horizontalSpacer_21</zorder>
-      <zorder>horizontalSpacer_22</zorder>
-      <zorder>horizontalSpacer_23</zorder>
-      <zorder>horizontalSpacer_24</zorder>
-      <zorder>horizontalSpacer_25</zorder>
-      <zorder>horizontalSpacer_26</zorder>
-      <zorder>horizontalSpacer_27</zorder>
-      <zorder>horizontalSpacer_28</zorder>
-      <zorder>horizontalSpacer_29</zorder>
-      <zorder>horizontalSpacer_30</zorder>
-      <zorder>horizontalSpacer_31</zorder>
-      <zorder>horizontalSpacer_32</zorder>
-      <zorder>horizontalSpacer_33</zorder>
-      <zorder>pushButton_4</zorder>
-      <zorder>horizontalSpacer_17</zorder>
-      <zorder>horizontalSpacer_19</zorder>
-      <zorder>horizontalSpacer_20</zorder>
-      <zorder>horizontalSpacer_24</zorder>
-      <zorder>horizontalSpacer_25</zorder>
-      <zorder>horizontalSpacer_27</zorder>
-      <zorder>horizontalSpacer_29</zorder>
-      <zorder>horizontalSpacer_31</zorder>
-      <zorder>horizontalSpacer_34</zorder>
-      <zorder>horizontalSpacer_35</zorder>
      </widget>
     </widget>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

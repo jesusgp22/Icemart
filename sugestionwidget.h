@@ -2,6 +2,7 @@
 #define SUGESTIONWIDGET_H
 
 #include <QWidget>
+#include <QTimer>
 
 namespace Ui {
 class SugestionWidget;
@@ -17,10 +18,12 @@ public:
 
 private:
     Ui::SugestionWidget *ui;
+    QTimer *timer;
 
 signals:
     void setPage(int);
 private slots:
+    void on_SugestionRequested();
     void on_checkBox_clicked();
     void on_checkBox_2_clicked();
     void on_checkBox_3_clicked();
@@ -31,6 +34,8 @@ private slots:
     void on_pushButton_clicked();
     void on_homeButton_clicked();
     void on_homeButton_2_clicked();
+    void setupSugestionPage();
+
 };
 
 #endif // SUGESTIONWIDGET_H

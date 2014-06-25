@@ -8,6 +8,9 @@ SugestionWidget::SugestionWidget(QWidget *parent) :
     ui(new Ui::SugestionWidget)
 {
     ui->setupUi(this);
+    timer = new QTimer();
+    timer->setSingleShot(true);
+    connect(timer,SIGNAL(timeout()),this,SLOT(setupSugestionPage()));
     insertarNodos1(dg);
     Camino path1;
     sugerir(dg, path1);
@@ -73,6 +76,12 @@ SugestionWidget::SugestionWidget(QWidget *parent) :
 SugestionWidget::~SugestionWidget()
 {
     delete ui;
+}
+
+void SugestionWidget::on_SugestionRequested()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    timer->start(1000);
 }
 
 void SugestionWidget::on_checkBox_clicked()
@@ -223,4 +232,12 @@ void SugestionWidget::on_homeButton_2_clicked()
 {
     emit setPage(0);
     guardarGrafo(dg);
+}
+
+void SugestionWidget::setupSugestionPage()
+{
+    this->ui->stackedWidget->setCurrentIndex(1);
+    this->ui->stackedWidget_2->setCurrentIndex(0);
+    on_pushButton_clicked();
+    //actualizar la pantalla
 }
