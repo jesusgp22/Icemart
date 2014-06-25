@@ -27,6 +27,7 @@ void RecipeWidget::on_homeButton_clicked()
 
 void RecipeWidget::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
+    ui->optionButton->setEnabled(true);
     int id = item->data(Qt::UserRole).toInt();
     this->current_id = id;
     QSqlQuery query;
@@ -261,7 +262,9 @@ void RecipeWidget::on_optionButton_clicked()
 {
     if(ui->optionButton->text().at(0)=='P'){ //preparar receta
         MakeRecipe();
-    }else{ //agregar a la lista de compras
+    }else if(ui->optionButton->text().at(0)=='A'){ //agregar a la lista de compras
         AddToMarketList();
     }
+    ui->optionButton->setText("Listo!");
+
 }

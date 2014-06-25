@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QDate>
 #include <QHash>
+#include <QMessageBox>
+#include "addmarketdialog.h"
 
 #define BETHA 0.25
 
@@ -19,15 +21,23 @@ MarketListWidget::MarketListWidget(QWidget *parent) :
 
 void MarketListWidget::FillList(){
     QSqlQuery query;
+    ui->listWidget->clear();
     if(query.exec("SELECT Food.id, Food.name, MarketList.amount,Food.measure_unit FROM MarketList JOIN Food WHERE MarketList.food_id=Food.id")){
         int i=0;
         while(query.next()){
             QString label = query.value(1).toString()+" "+query.value(2).toString()+" "+query.value(3).toString();
-            ui->listWidget->insertItem(i++,label);
+            QListWidgetItem* item = new QListWidgetItem(label);
+            item->setData(Qt::UserRole,query.value(0).toInt());
+            ui->listWidget->insertItem(i++,item);
         }
     }else{
         qDebug()<<"Couldn't retrieve market list"<<query.lastError().text();
     }
+}
+
+void MarketListWidget::insertItem(int food_id, int amount)
+{
+    qDebug()<<food_id,amount;
 }
 
 MarketListWidget::~MarketListWidget()
@@ -92,10 +102,8 @@ void MarketListWidget::calculateMarketList(){
             }
             if(estimate>0.5){
                 int int_estimate = qRound(estimate);
-                QString label = query.value(2).toString()+" "+QString::number(int_estimate)+" "+query.value(3).toString();
-                ui->listWidget->insertItem(i++,label);
                 QSqlQuery auxquery;
-                auxquery.prepare("INSERT INTO MarketList (amount,food_id) VALUES (?,?);");
+                auxquery.prepare("INSERT INTO MarketList (amount,food_id) VALUES (?,?) ");
                 auxquery.addBindValue(int_estimate); qDebug()<<int_estimate;
                 auxquery.addBindValue(id); qDebug()<<id;
                 if(auxquery.exec()){
@@ -114,7 +122,7 @@ void MarketListWidget::calculateMarketList(){
     }else{
         qDebug()<<"Failed to update consumption table";
     }
-
+    FillList();
 
 
 }
@@ -132,6 +140,50 @@ void MarketListWidget::on_pushButton_2_clicked()
     }else{
         qDebug()<<"Failed to clear market list";
     }
+    FillList();
 
+
+}
+
+void MarketListWidget::on_addFoodButton_clicked()
+{
+    AddMarketDialog *dialog = new AddMarketDialog(this);
+    int ret_val = dialog->exec();
+    if(ret_val){
+        FillList();
+    }
+    delete dialog;
+}
+
+void MarketListWidget::on_addButton_clicked()
+{
+    if(!ui->listWidget->currentIndex().isValid()){
+        QMessageBox::critical(this,"Nada seleccionado","Seleccione un item de la lista para modificar",QMessageBox::Ok);
+        return;
+    }
+    QListWidgetItem *item = ui->listWidget->currentItem();
+    int amount = ui->spinBox->value();
+    QSqlQuery query;
+    int id = item->data(Qt::UserRole).toInt();
+    if(ui->spinBox->value()>0){
+        query.prepare("UPDATE MarketList SET amount=? WHERE food_id=?");
+        query.addBindValue(amount);
+        query.addBindValue(id);
+        if(query.exec()){
+            qDebug()<<"updated market list item properly";
+            FillList();
+        }else{
+            qDebug()<<"failed to update market list item";
+        }
+    }else{
+        query.prepare("DELETE FROM MarketList WHERE food_id=?");
+        query.addBindValue(id);
+        if(query.exec()){
+            qDebug()<<"deleted market list item properly";
+            FillList();
+        }else{
+            qDebug()<<"failed to delete market list item";
+        }
+    }
 
 }

@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Item (
 CREATE TABLE IF NOT EXISTS MarketList (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         amount INTEGER,
-        food_id INTEGER,
+        food_id INTEGER UNIQUE,
         FOREIGN KEY (food_id) REFERENCES Food(id)
 );
 
