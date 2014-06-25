@@ -152,6 +152,7 @@ void conectarRecetasArchivo(Digrafo & digrafo)
                     if(noRepetirArcos(digrafo, it2.get_current()->get_info(), it.get_current()->get_info()))
                         digrafo.insert_arc(it2.get_current(), it.get_current(), 0);
                 }
+                //qDebug() << QString::fromStdString(it.get_current()->get_info().nombre) << QString::fromStdString(it2.get_current()->get_info().nombre) << arc;
             }
         }
     }
@@ -359,7 +360,7 @@ void penalizarReceta(Digrafo &dg, int np)
                         aprendizajeReceta(it.get_current_node()->get_info());
                     else
                     {
-                        it.get_current_node()->get_info().gusto=11;
+                        it.get_current_node()->get_info().gusto=10;
                         aprendizajeReceta(it.get_current_node()->get_info());
                     }
                 }
@@ -389,7 +390,11 @@ void premiarReceta(Digrafo &dg, int np)
                     if(it.get_current_node()->get_info().gusto>=0)
                     {
                         aprendizajeReceta(it.get_current_node()->get_info());
-                        qDebug() << it.get_current_node()->get_info().gusto;
+                    }
+                    else
+                    {
+                        it.get_current_node()->get_info().gusto=0;
+                        aprendizajeReceta(it.get_current_node()->get_info());
                     }
                 }
             }
@@ -417,7 +422,7 @@ void penalizarCombinacionRecetas1(Digrafo &dg)
         if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
             arc->get_info()+= 1;
-            if(arc->get_info()==12)
+            if(arc->get_info()==11)
                 arc->get_info()-=1;
         }
     }
@@ -444,7 +449,7 @@ void penalizarCombinacionRecetas2(Digrafo &dg)
         if( (src->get_info().id == it1.get_current_node()->get_info().id) && (tgt->get_info().id == it2.get_current_node()->get_info().id) )
         {
             arc->get_info()+= 1;
-            if(arc->get_info()==12)
+            if(arc->get_info()==11)
                 arc->get_info()-=1;
         }
     }
@@ -529,7 +534,7 @@ void insertarNodos1(Digrafo & g)
     query.exec("SELECT id,name,recipe_type,score FROM Recipe");
     while(query.next())
     {
-        if( ("Aves y caza" == query.value(2).toString()) || ("Carnes" == query.value(2).toString()) || ("Pescados y mariscos" == query.value(2).toString()) )
+        if( ("Aves y caza" == query.value(2).toString()) || ("Carnes y guisos" == query.value(2).toString()) || ("Pescados y mariscos" == query.value(2).toString()) )
         {
             receta.id= query.value(0).toInt();
             receta.nombre= query.value(1).toString().toUtf8().constData();
@@ -549,7 +554,6 @@ void insertarNodos1(Digrafo & g)
             Digrafo::Node * n = g.search_node(receta);
             if (n == NULL)
                 n = g.insert_node(receta);
-            //qDebug() << query.value(0).toInt() << " " << query.value(1).toString();
         }
 
         if( ("Ensaladas y verduras" == query.value(2).toString()) )
@@ -561,17 +565,16 @@ void insertarNodos1(Digrafo & g)
             Digrafo::Node * n = g.search_node(receta);
             if (n == NULL)
                 n = g.insert_node(receta);
-            //aprendizajeReceta(receta);
         }
-        qDebug() << query.value(0).toInt() << query.value(1).toString() << query.value(3).toString();
+        //qDebug() << query.value(0).toInt() << query.value(1).toString() << query.value(3).toString();
     }
     QSettings settings;
     if(!settings.contains("arcosInicializados"))
     {
         conectarRecetas(g);
         settings.setValue("arcosInicializados",true);
-    }else{
-    //conectarRecetas(g);
+    }else
+    {
         conectarRecetasArchivo(g);
     }
 }

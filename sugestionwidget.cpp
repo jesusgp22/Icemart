@@ -9,18 +9,17 @@ SugestionWidget::SugestionWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     insertarNodos1(dg);
-    //conectarRecetasArchivo(dg);
-    //conectarRecetas(dg);
-    typedef Path<Digrafo> Camino;
     Camino path1;
     sugerir(dg, path1);
     string linea[3];
-    int i=0;
+    int i=0, iden[3];
+
     for(Camino::Iterator itor(path1); itor.has_current(); itor.next())
     {
         if( itor.get_current_node()->get_info().nombre != "Fuente" && itor.get_current_node()->get_info().nombre != "Sumidero" )
         {
             linea[i]= itor.get_current_node()->get_info().nombre;
+            iden[i]= itor.get_current_node()->get_info().id;
             i++;
         }
     }
@@ -30,6 +29,45 @@ SugestionWidget::SugestionWidget(QWidget *parent) :
     ui->checkBox_2->setText(ui->label_2->text());
     ui->checkBox_3->setText(ui->label_3->text());
     ui->checkBox_4->setText(ui->label_4->text());
+
+    QSqlQuery query;
+    query.prepare("SELECT cals,recipe_type FROM Recipe WHERE id=?");
+    query.addBindValue(iden[0]);
+    if(query.exec())
+    {
+       while(query.next())
+       {
+            ui->calsProtLabel->setText(query.value(0).toString()+" cals");
+            if(query.value(1).toString()=="Aves y caza")
+                ui->imagenProteina->setPixmap(QPixmap(":/res/chickenicon.png"));
+            else if(query.value(1).toString()=="Carnes y guiso")
+                ui->imagenProteina->setPixmap(QPixmap(":/res/meaticon.png"));
+            else if(query.value(1).toString()=="Pescados y mariscos")
+                ui->imagenProteina->setPixmap(QPixmap(":/res/fishicon.png"));
+       }
+    }
+
+    query.addBindValue(iden[1]);
+    if(query.exec())
+    {
+       while(query.next())
+       {
+            ui->calsCarbLabel->setText(query.value(0).toString()+" cals");
+            if(query.value(1).toString()=="Pastas y arroces")
+                ui->imagenCarbohidrato->setPixmap(QPixmap(":/res/riceicon.png"));
+            else if(query.value(1).toString()=="Sopas y cremas")
+                ui->imagenCarbohidrato->setPixmap(QPixmap(":/res/soupicon.png"));
+       }
+    }
+
+    query.addBindValue(iden[2]);
+    if(query.exec())
+    {
+       while(query.next())
+       {
+            ui->saladCalsLabel->setText(query.value(0).toString()+" cals");
+       }
+    }
 }
 
 SugestionWidget::~SugestionWidget()
